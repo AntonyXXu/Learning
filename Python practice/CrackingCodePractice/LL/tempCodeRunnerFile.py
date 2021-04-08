@@ -1,0 +1,1 @@
+ptr2 = ptr2.next
