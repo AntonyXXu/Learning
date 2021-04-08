@@ -1,3 +1,3 @@
 # Learning
-Self Learning in Python
+Self Learning for datastructures and algorithms.
 
