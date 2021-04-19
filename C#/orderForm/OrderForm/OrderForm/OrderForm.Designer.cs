@@ -34,9 +34,9 @@ namespace OrderForm
             this.chkAddOn3 = new System.Windows.Forms.CheckBox();
             this.chkAddOn1 = new System.Windows.Forms.CheckBox();
             this.grpbxOrderTotals = new System.Windows.Forms.GroupBox();
-            this.txtTotalCost = new System.Windows.Forms.TextBox();
-            this.txtTax = new System.Windows.Forms.TextBox();
-            this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.lblTotalCostVal = new System.Windows.Forms.Label();
+            this.lblTaxVal = new System.Windows.Forms.Label();
+            this.lblSubTotalVal = new System.Windows.Forms.Label();
             this.lblTotalCost = new System.Windows.Forms.Label();
             this.lblTax = new System.Windows.Forms.Label();
             this.lblSubtotal = new System.Windows.Forms.Label();
@@ -98,9 +98,9 @@ namespace OrderForm
             // 
             // grpbxOrderTotals
             // 
-            this.grpbxOrderTotals.Controls.Add(this.txtTotalCost);
-            this.grpbxOrderTotals.Controls.Add(this.txtTax);
-            this.grpbxOrderTotals.Controls.Add(this.txtSubtotal);
+            this.grpbxOrderTotals.Controls.Add(this.lblTotalCostVal);
+            this.grpbxOrderTotals.Controls.Add(this.lblTaxVal);
+            this.grpbxOrderTotals.Controls.Add(this.lblSubTotalVal);
             this.grpbxOrderTotals.Controls.Add(this.lblTotalCost);
             this.grpbxOrderTotals.Controls.Add(this.lblTax);
             this.grpbxOrderTotals.Controls.Add(this.lblSubtotal);
@@ -111,29 +111,29 @@ namespace OrderForm
             this.grpbxOrderTotals.TabStop = false;
             this.grpbxOrderTotals.Text = "Total Costs";
             // 
-            // txtTotalCost
+            // lblTotalCostVal
             // 
-            this.txtTotalCost.Enabled = false;
-            this.txtTotalCost.Location = new System.Drawing.Point(209, 94);
-            this.txtTotalCost.Name = "txtTotalCost";
-            this.txtTotalCost.Size = new System.Drawing.Size(100, 23);
-            this.txtTotalCost.TabIndex = 1;
+            this.lblTotalCostVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalCostVal.Location = new System.Drawing.Point(137, 96);
+            this.lblTotalCostVal.Name = "lblTotalCostVal";
+            this.lblTotalCostVal.Size = new System.Drawing.Size(187, 19);
+            this.lblTotalCostVal.TabIndex = 3;
             // 
-            // txtTax
+            // lblTaxVal
             // 
-            this.txtTax.Enabled = false;
-            this.txtTax.Location = new System.Drawing.Point(209, 59);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.Size = new System.Drawing.Size(100, 23);
-            this.txtTax.TabIndex = 1;
+            this.lblTaxVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTaxVal.Location = new System.Drawing.Point(137, 62);
+            this.lblTaxVal.Name = "lblTaxVal";
+            this.lblTaxVal.Size = new System.Drawing.Size(187, 19);
+            this.lblTaxVal.TabIndex = 2;
             // 
-            // txtSubtotal
+            // lblSubTotalVal
             // 
-            this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Location = new System.Drawing.Point(209, 25);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.Size = new System.Drawing.Size(100, 23);
-            this.txtSubtotal.TabIndex = 1;
+            this.lblSubTotalVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSubTotalVal.Location = new System.Drawing.Point(137, 28);
+            this.lblSubTotalVal.Name = "lblSubTotalVal";
+            this.lblSubTotalVal.Size = new System.Drawing.Size(187, 19);
+            this.lblSubTotalVal.TabIndex = 1;
             // 
             // lblTotalCost
             // 
@@ -189,6 +189,7 @@ namespace OrderForm
             this.btnReset.TabIndex = 2;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.frmOrderForm_Load);
             // 
             // btnExit
             // 
@@ -219,6 +220,7 @@ namespace OrderForm
             this.radioBurger.TabStop = true;
             this.radioBurger.Text = "Hamburger - $6.95";
             this.radioBurger.UseVisualStyleBackColor = true;
+            this.radioBurger.CheckedChanged += new System.EventHandler(this.radioBurger_CheckedChanged);
             // 
             // radioPizza
             // 
@@ -230,6 +232,7 @@ namespace OrderForm
             this.radioPizza.TabStop = true;
             this.radioPizza.Text = "Pizza - $5.95";
             this.radioPizza.UseVisualStyleBackColor = true;
+            this.radioPizza.CheckedChanged += new System.EventHandler(this.radioPizza_CheckedChanged);
             // 
             // radioSalad
             // 
@@ -241,6 +244,7 @@ namespace OrderForm
             this.radioSalad.TabStop = true;
             this.radioSalad.Text = "Salad - $4.95";
             this.radioSalad.UseVisualStyleBackColor = true;
+            this.radioSalad.CheckedChanged += new System.EventHandler(this.radioSalad_CheckedChanged);
             // 
             // grpbxMainCourse
             // 
@@ -287,9 +291,6 @@ namespace OrderForm
         private System.Windows.Forms.Label lblTax;
         private System.Windows.Forms.Label lblSubtotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTotalCost;
-        private System.Windows.Forms.TextBox txtTax;
-        private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnExit;
@@ -301,6 +302,9 @@ namespace OrderForm
         private System.Windows.Forms.RadioButton radioPizza;
         private System.Windows.Forms.RadioButton radioSalad;
         private System.Windows.Forms.GroupBox grpbxMainCourse;
+        private System.Windows.Forms.Label lblSubTotalVal;
+        private System.Windows.Forms.Label lblTotalCostVal;
+        private System.Windows.Forms.Label lblTaxVal;
     }
 }
 
