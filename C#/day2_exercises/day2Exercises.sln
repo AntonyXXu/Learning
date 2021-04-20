@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day2Exercises", "day2Exercises\day2Exercises.csproj", "{D6670102-555A-4095-A5C8-A1645AFAF54F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day2Exercises", "day2Exercises\day2Exercises.csproj", "{D6670102-555A-4095-A5C8-A1645AFAF54F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyChange", "MoneyChange\MoneyChange.csproj", "{4B2D9ABB-CF10-47E6-9336-28326904492A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D6670102-555A-4095-A5C8-A1645AFAF54F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6670102-555A-4095-A5C8-A1645AFAF54F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6670102-555A-4095-A5C8-A1645AFAF54F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2D9ABB-CF10-47E6-9336-28326904492A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2D9ABB-CF10-47E6-9336-28326904492A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2D9ABB-CF10-47E6-9336-28326904492A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2D9ABB-CF10-47E6-9336-28326904492A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

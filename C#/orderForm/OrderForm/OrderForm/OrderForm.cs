@@ -45,9 +45,9 @@ namespace OrderForm
         {
             //initialize all variables and states
             lblOrderSubmitted.Text = "Submit your order";
-            chkAddOn1.Checked = chkAddOn2.Checked = chkAddOn3.Checked = false;
+     
             Array.Clear(costs, 0, 3);
-            Array.Clear(addOns, 0, 3);
+           
             radioBurger.Checked = true;
             radioBurger_CheckedChanged(sender, e);
         }
@@ -85,7 +85,9 @@ namespace OrderForm
         private void update_Form(int radioVal)
         {
             //Update add on form contents based on radio passed var
-            grpbxAddOn.Text = "Add-On Items ($" + addOnCosts + "/item)";
+            chkAddOn1.Checked = chkAddOn2.Checked = chkAddOn3.Checked = false;
+            Array.Clear(addOns, 0, 3);
+            grpbxAddOn.Text = "Add-On Items (" + addOnCosts.ToString("c") + "/item)";
             chkAddOn1.Text = Options_1[radioVal];
             chkAddOn2.Text = Options_2[radioVal];
             chkAddOn3.Text = Options_3[radioVal];
