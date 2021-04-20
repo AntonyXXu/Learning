@@ -31,6 +31,7 @@ namespace OrderForm
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            //Check if the form was reset. If it is, allow for submission
             if (lblOrderSubmitted.Text != "Submit your order")
             {
                 lblOrderSubmitted.Text = "Click Reset before submitting";
@@ -42,21 +43,24 @@ namespace OrderForm
 
         private void frmOrderForm_Load(object sender, EventArgs e)
         {
+            //initialize all variables and states
             lblOrderSubmitted.Text = "Submit your order";
+            chkAddOn1.Checked = chkAddOn2.Checked = chkAddOn3.Checked = false;
             Array.Clear(costs, 0, 3);
             Array.Clear(addOns, 0, 3);
-            chkAddOn1.Checked = chkAddOn2.Checked = chkAddOn3.Checked = false;
             radioBurger.Checked = true;
             radioBurger_CheckedChanged(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            //Close application
             Application.Exit();
         }
 
         private void radioBurger_CheckedChanged(object sender, EventArgs e)
         {
+            //initialize base costs and add on costs. Update the form based on selection
             baseCosts = 6.95;
             addOnCosts = 0.75;
             update_Form(0);
@@ -64,6 +68,7 @@ namespace OrderForm
         }
         private void radioPizza_CheckedChanged(object sender, EventArgs e)
         {
+            //initialize base costs and add on costs. Update the form based on selection
             baseCosts = 5.95;
             addOnCosts = 0.50;
             update_Form(1);
@@ -71,6 +76,7 @@ namespace OrderForm
         }
         private void radioSalad_CheckedChanged(object sender, EventArgs e)
         {
+            //initialize base costs and add on costs. Update the form based on selection
             baseCosts = 4.95;
             addOnCosts = 0.25;
             update_Form(2);
@@ -78,6 +84,7 @@ namespace OrderForm
         }
         private void update_Form(int radioVal)
         {
+            //Update add on form contents based on radio passed var
             grpbxAddOn.Text = "Add-On Items ($" + addOnCosts + "/item)";
             chkAddOn1.Text = Options_1[radioVal];
             chkAddOn2.Text = Options_2[radioVal];
@@ -85,6 +92,7 @@ namespace OrderForm
         }
         private void update_Costs()
         {
+            //Update costs based on current selections
             costs[0] = baseCosts;
             for (int i = 0; i < addOns.Length; i++)
             {
