@@ -75,6 +75,7 @@ namespace OrderForm
             this.chkAddOn2.TabIndex = 0;
             this.chkAddOn2.Text = "Ketchup, Mayo, Mustard";
             this.chkAddOn2.UseVisualStyleBackColor = true;
+            this.chkAddOn2.CheckedChanged += new System.EventHandler(this.chkAddOn2_CheckedChanged);
             // 
             // chkAddOn3
             // 
@@ -85,6 +86,7 @@ namespace OrderForm
             this.chkAddOn3.TabIndex = 0;
             this.chkAddOn3.Text = "French Fries";
             this.chkAddOn3.UseVisualStyleBackColor = true;
+            this.chkAddOn3.CheckedChanged += new System.EventHandler(this.chkAddOn3_CheckedChanged);
             // 
             // chkAddOn1
             // 
@@ -95,6 +97,7 @@ namespace OrderForm
             this.chkAddOn1.TabIndex = 0;
             this.chkAddOn1.Text = "Lettuce, Tomato, Onion";
             this.chkAddOn1.UseVisualStyleBackColor = true;
+            this.chkAddOn1.CheckedChanged += new System.EventHandler(this.chkAddOn1_CheckedChanged);
             // 
             // grpbxOrderTotals
             // 
@@ -204,11 +207,12 @@ namespace OrderForm
             // lblOrderSubmitted
             // 
             this.lblOrderSubmitted.AutoSize = true;
-            this.lblOrderSubmitted.Location = new System.Drawing.Point(285, 313);
+            this.lblOrderSubmitted.Location = new System.Drawing.Point(273, 308);
             this.lblOrderSubmitted.Name = "lblOrderSubmitted";
             this.lblOrderSubmitted.Size = new System.Drawing.Size(105, 15);
             this.lblOrderSubmitted.TabIndex = 3;
             this.lblOrderSubmitted.Text = "Submit Your Order";
+            this.lblOrderSubmitted.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // radioBurger
             // 

@@ -12,15 +12,17 @@ namespace OrderForm
 {
     public partial class frmOrderForm : Form
     {
+        //Read Only Text for different add on options
         public readonly string[] Options_1 = { "Lettuce, tomato, and onions", "Pepperoni", "Croutons", };
         public readonly string[] Options_2 = { "Ketchup, mustard, and mayo", "Sausage", "Bacon Bits" };
         public readonly string[] Options_3 = { "French fries", "Olives", "Bread sticks" };
         //Costs for hamburger, pizza, and salad
-        public readonly double[] baseCosts = { 6.95, 5.95, 4.95 };
-        public readonly double[] addOnCosts = { 0.75, 0.50, 0.25 };
+        public double baseCosts = 6.95;
+        public double addOnCosts = 0.75;
         //Costs ordered by subtotal, tax, total
-        public double[] costs = { 0, 0, 0 };
-     
+        private bool[] addOns = { false, false, false };
+        private double[] costs = { 0, 0, 0 };
+
 
         public frmOrderForm()
         {
@@ -29,14 +31,23 @@ namespace OrderForm
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            if (lblOrderSubmitted.Text != "Submit your order")
+            {
+                lblOrderSubmitted.Text = "Click Reset before submitting";
+                return;
+            }
             lblOrderSubmitted.Text = "Order Submitted!";
+
         }
 
         private void frmOrderForm_Load(object sender, EventArgs e)
         {
-            radioBurger.Checked = true;
             lblOrderSubmitted.Text = "Submit your order";
             Array.Clear(costs, 0, 3);
+            Array.Clear(addOns, 0, 3);
+            chkAddOn1.Checked = chkAddOn2.Checked = chkAddOn3.Checked = false;
+            radioBurger.Checked = true;
+            radioBurger_CheckedChanged(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -46,31 +57,42 @@ namespace OrderForm
 
         private void radioBurger_CheckedChanged(object sender, EventArgs e)
         {
-            costs[0] = baseCosts[0];
+            baseCosts = 6.95;
+            addOnCosts = 0.75;
             update_Form(0);
             update_Costs();
         }
         private void radioPizza_CheckedChanged(object sender, EventArgs e)
         {
-            costs[0] = baseCosts[1];
+            baseCosts = 5.95;
+            addOnCosts = 0.50;
             update_Form(1);
             update_Costs();
         }
         private void radioSalad_CheckedChanged(object sender, EventArgs e)
         {
-            costs[0] = baseCosts[2];
+            baseCosts = 4.95;
+            addOnCosts = 0.25;
             update_Form(2);
             update_Costs();
         }
         private void update_Form(int radioVal)
         {
-            grpbxAddOn.Text = "Add-On Items ($" + addOnCosts[radioVal] + "/item)";
+            grpbxAddOn.Text = "Add-On Items ($" + addOnCosts + "/item)";
             chkAddOn1.Text = Options_1[radioVal];
             chkAddOn2.Text = Options_2[radioVal];
             chkAddOn3.Text = Options_3[radioVal];
         }
         private void update_Costs()
         {
+            costs[0] = baseCosts;
+            for (int i = 0; i < addOns.Length; i++)
+            {
+                if (addOns[i] == true)
+                {
+                    costs[0] += addOnCosts;
+                }
+            }
             costs[1] = Math.Round(costs[0] * 1 / 20, 2);
             costs[2] = costs[0] + costs[1];
             lblSubTotalVal.Text = (costs[0]).ToString("C");
@@ -78,6 +100,20 @@ namespace OrderForm
             lblTotalCostVal.Text = (costs[2]).ToString("C");
         }
 
-      
+        private void chkAddOn1_CheckedChanged(object sender, EventArgs e)
+        {
+            addOns[0] = !addOns[0];
+            update_Costs();
+        }
+        private void chkAddOn2_CheckedChanged(object sender, EventArgs e)
+        {
+            addOns[1] = !addOns[1];
+            update_Costs();
+        }
+        private void chkAddOn3_CheckedChanged(object sender, EventArgs e)
+        {
+            addOns[2] = !addOns[2];
+            update_Costs();
+        }
     }
 }
