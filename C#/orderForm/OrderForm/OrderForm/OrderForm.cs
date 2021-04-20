@@ -16,18 +16,18 @@ namespace OrderForm
         public readonly string[] Options_1 = { "Lettuce, tomato, and onions", "Pepperoni", "Croutons", };
         public readonly string[] Options_2 = { "Ketchup, mustard, and mayo", "Sausage", "Bacon Bits" };
         public readonly string[] Options_3 = { "French fries", "Olives", "Bread sticks" };
-        //Costs for hamburger, pizza, and salad
-        public double baseCosts = 6.95;
-        public double addOnCosts = 0.75;
-        //Costs ordered by subtotal, tax, total
-        private bool[] addOns = { false, false, false };
-        private double[] costs = { 0, 0, 0 };
-
 
         public frmOrderForm()
         {
             InitializeComponent();
         }
+
+        //Costs for hamburger, pizza, and salad
+        private double baseCosts = 6.95;
+        private double addOnCosts = 0.75;
+        //Costs ordered by subtotal, tax, total
+        private bool[] addOns = { false, false, false };
+        private double[] costs = { 0, 0, 0 };
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -101,7 +101,9 @@ namespace OrderForm
                     costs[0] += addOnCosts;
                 }
             }
+            //Calculate the tax rate
             costs[1] = Math.Round(costs[0] * 1 / 20, 2);
+            //Calculate total cost
             costs[2] = costs[0] + costs[1];
             lblSubTotalVal.Text = (costs[0]).ToString("C");
             lblTaxVal.Text = (costs[1]).ToString("C");
