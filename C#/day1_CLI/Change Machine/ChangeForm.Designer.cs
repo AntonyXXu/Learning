@@ -1,6 +1,6 @@
 ﻿namespace Change_Machine
 {
-    partial class Form1
+    partial class ChangeForm
     {
         /// <summary>
         /// Required designer variable.

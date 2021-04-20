@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Change_Machine
 {
-    public partial class Form1 : Form
+    public partial class ChangeForm : Form
     {
-        public Form1()
+        public ChangeForm()
         {
             InitializeComponent();
         }
