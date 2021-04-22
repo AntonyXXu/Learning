@@ -45,9 +45,9 @@ namespace OrderForm
         {
             //initialize all variables and states
             lblOrderSubmitted.Text = "Submit your order";
-     
+
             Array.Clear(costs, 0, 3);
-           
+
             radioBurger.Checked = true;
             radioBurger_CheckedChanged(sender, e);
         }
