@@ -32,18 +32,19 @@ namespace ElectricityBillApplication
             this.grpbxAddCustomer = new System.Windows.Forms.GroupBox();
             this.btnResetCustomer = new System.Windows.Forms.Button();
             this.btnSubmitNewCustomer = new System.Windows.Forms.Button();
+            this.txtbxKWHVal = new System.Windows.Forms.TextBox();
             this.txtbxFirstName = new System.Windows.Forms.TextBox();
             this.txtbxLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblPredictedBillVal = new System.Windows.Forms.Label();
+            this.lblCustomerError = new System.Windows.Forms.Label();
             this.lblAccountNumberValue = new System.Windows.Forms.Label();
             this.lblPredictBill = new System.Windows.Forms.Label();
             this.lblKWH = new System.Windows.Forms.Label();
             this.lblAccountNumber = new System.Windows.Forms.Label();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnViewCustomer = new System.Windows.Forms.Button();
-            this.txtbxKWHVal = new System.Windows.Forms.TextBox();
             this.grpbxAddCustomer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@ namespace ElectricityBillApplication
             this.grpbxAddCustomer.Controls.Add(this.lblLastName);
             this.grpbxAddCustomer.Controls.Add(this.lblFirstName);
             this.grpbxAddCustomer.Controls.Add(this.lblPredictedBillVal);
+            this.grpbxAddCustomer.Controls.Add(this.lblCustomerError);
             this.grpbxAddCustomer.Controls.Add(this.lblAccountNumberValue);
             this.grpbxAddCustomer.Controls.Add(this.lblPredictBill);
             this.grpbxAddCustomer.Controls.Add(this.lblKWH);
@@ -85,6 +87,17 @@ namespace ElectricityBillApplication
             this.btnSubmitNewCustomer.TabIndex = 1;
             this.btnSubmitNewCustomer.Text = "Submit New Customer";
             this.btnSubmitNewCustomer.UseVisualStyleBackColor = true;
+            this.btnSubmitNewCustomer.Click += new System.EventHandler(this.btnSubmitNewCustomer_Click);
+            // 
+            // txtbxKWHVal
+            // 
+            this.txtbxKWHVal.Location = new System.Drawing.Point(450, 73);
+            this.txtbxKWHVal.Name = "txtbxKWHVal";
+            this.txtbxKWHVal.Size = new System.Drawing.Size(209, 23);
+            this.txtbxKWHVal.TabIndex = 1;
+            this.txtbxKWHVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtbxKWHVal.TextChanged += new System.EventHandler(this.txtbxKWHVal_TextChange);
+            this.txtbxKWHVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxKWHVal_KeyPress);
             // 
             // txtbxFirstName
             // 
@@ -92,6 +105,7 @@ namespace ElectricityBillApplication
             this.txtbxFirstName.Name = "txtbxFirstName";
             this.txtbxFirstName.Size = new System.Drawing.Size(209, 23);
             this.txtbxFirstName.TabIndex = 1;
+            this.txtbxFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtbxLastName
             // 
@@ -99,6 +113,7 @@ namespace ElectricityBillApplication
             this.txtbxLastName.Name = "txtbxLastName";
             this.txtbxLastName.Size = new System.Drawing.Size(209, 23);
             this.txtbxLastName.TabIndex = 1;
+            this.txtbxLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lblLastName
             // 
@@ -128,6 +143,16 @@ namespace ElectricityBillApplication
             this.lblPredictedBillVal.Size = new System.Drawing.Size(209, 23);
             this.lblPredictedBillVal.TabIndex = 0;
             this.lblPredictedBillVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCustomerError
+            // 
+            this.lblCustomerError.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCustomerError.Location = new System.Drawing.Point(83, 280);
+            this.lblCustomerError.Margin = new System.Windows.Forms.Padding(3);
+            this.lblCustomerError.Name = "lblCustomerError";
+            this.lblCustomerError.Size = new System.Drawing.Size(576, 23);
+            this.lblCustomerError.TabIndex = 0;
+            this.lblCustomerError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblAccountNumberValue
             // 
@@ -187,13 +212,6 @@ namespace ElectricityBillApplication
             this.btnViewCustomer.Text = "View Customer Data";
             this.btnViewCustomer.UseVisualStyleBackColor = true;
             // 
-            // txtbxKWHVal
-            // 
-            this.txtbxKWHVal.Location = new System.Drawing.Point(450, 73);
-            this.txtbxKWHVal.Name = "txtbxKWHVal";
-            this.txtbxKWHVal.Size = new System.Drawing.Size(209, 23);
-            this.txtbxKWHVal.TabIndex = 1;
-            // 
             // ElectricityBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,6 +246,7 @@ namespace ElectricityBillApplication
         private System.Windows.Forms.Label lblPredictBill;
         private System.Windows.Forms.Label lblKWH;
         private System.Windows.Forms.TextBox txtbxKWHVal;
+        private System.Windows.Forms.Label lblCustomerError;
     }
 }
 
