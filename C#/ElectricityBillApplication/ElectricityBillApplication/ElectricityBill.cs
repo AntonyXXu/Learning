@@ -14,10 +14,10 @@ namespace ElectricityBillApplication
     public partial class ElectricityBill : Form
     {
         private int AccountNumber = 1000000;
-        public int CustomerNumber { get; set; }
         public decimal TotalKWH { get; set; }
         public decimal AvgBill { get; set; }
 
+        private List<Customer> m_customerList;
 
         public ElectricityBill()
         {
@@ -26,14 +26,16 @@ namespace ElectricityBillApplication
 
         private void ElectricityBill_Load(object sender, EventArgs e)
         {
-            CustomerNumber = 0;
             TotalKWH = AvgBill = 0;
             grpbxAddCustomer.Visible = false;
+            grpbxData.Visible = false;
+            m_customerList = new List<Customer>();
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             grpbxAddCustomer.Visible = true;
+            grpbxData.Visible = false;
             btnAddCustomer.BackColor = Color.White;
             btnResetCustomer_Click(sender, e);
         }
@@ -44,7 +46,8 @@ namespace ElectricityBillApplication
             txtbxFirstName.Text = "";
             txtbxLastName.Text = "";
             txtbxKWHVal.Text = "";
-            lblPredictBill.Text = "";
+            lblPredictedBillVal.Text = "";
+            lblAddCustomerMsg.Text = "";
         }
 
         private void txtbxKWHVal_TextChange(object sender, EventArgs e)
@@ -70,15 +73,18 @@ namespace ElectricityBillApplication
                 int accountNo = Convert.ToInt32(lblAccountNumberValue.Text);
                 decimal KWH = decimal.Parse(txtbxKWHVal.Text);
                 Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
+                m_customerList.Add(newCust);
+                
                 AccountNumber++;
                 TotalKWH += KWH;
-                CustomerNumber++;
-                //Realistic way of calculating Average Bill
-                AvgBill = (TotalKWH * AvgBill + decimal.Parse(lblPredictedBillVal.Text)) / CustomerNumber;
+      
+                //Alternate way of calculating Average Bill
+                //decimal bill = Customer.ADMINCHARGE + decimal.Parse(txtbxKWHVal.Text) * Customer.USAGECHARGE;
+                //AvgBill = (TotalKWH * AvgBill + bill) / Convert.ToDecimal(CustomerNumber);
                 //Fast way of calculating due to static costs
-                AvgBill = CustomerNumber * Customer.ADMINCHARGE + TotalKWH * Customer.USAGECHARGE;
-
-                btnResetCustomer_Click(sender, e);
+                AvgBill = m_customerList.Count * Customer.ADMINCHARGE + TotalKWH * Customer.USAGECHARGE;
+                                btnResetCustomer_Click(sender, e);
+                lblAddCustomerMsg.Text = "Account No " + (AccountNumber-1).ToString() + " Submitted";
             }
             catch
             {
@@ -94,7 +100,7 @@ namespace ElectricityBillApplication
 
         private void txtbxKWHVal_KeyPress(object sender, KeyPressEventArgs e)
         {
-                        if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -102,6 +108,20 @@ namespace ElectricityBillApplication
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnViewCustomer_Click(object sender, EventArgs e)
+        {
+            grpbxData.Visible = true;
+            grpbxAddCustomer.Visible = false;
+            btnViewCustomer.BackColor = Color.White;
+            btnResetCustomer_Click(sender, e);
+            lblTotalCustomerVal.Text = m_customerList.Count.ToString();
         }
     }
 }
