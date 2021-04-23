@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CustomerList
+namespace ElectricityBillApplication
 {
     public class Customer
     {
