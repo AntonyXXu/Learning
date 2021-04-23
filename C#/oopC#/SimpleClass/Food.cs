@@ -11,7 +11,7 @@ namespace SimpleClass
         public string Name { get; set; }
         public decimal Price { get; set; }
         public DateTime Expiry { get; set; }
-
+        public decimal Subtotal { get { return Price * Tax.getTax(); }  }
         public Food(string name, decimal price, DateTime expiry)
             {
             Name = name;
@@ -22,7 +22,7 @@ namespace SimpleClass
 
         public override string ToString()
         {
-            return Name + "," + Price.ToString() + ", " + Expiry.ToString("M");
+            return Name + "," + Price.ToString() + ", " + Expiry.ToString("M") + Subtotal.ToString("c");
         }
     }
 }
