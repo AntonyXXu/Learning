@@ -37,6 +37,7 @@ namespace ElectricityBillApplication
             grpbxAddCustomer.Visible = true;
             grpbxData.Visible = false;
             btnAddCustomer.BackColor = Color.White;
+            btnViewCustomer.BackColor = System.Drawing.SystemColors.Control;
             btnResetCustomer_Click(sender, e);
         }
 
@@ -74,17 +75,17 @@ namespace ElectricityBillApplication
                 decimal KWH = decimal.Parse(txtbxKWHVal.Text);
                 Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
                 m_customerList.Add(newCust);
-                
+                lstbxCustomers.Items.Add(newCust.ToString());
                 AccountNumber++;
                 TotalKWH += KWH;
-      
+
                 //Alternate way of calculating Average Bill
                 //decimal bill = Customer.ADMINCHARGE + decimal.Parse(txtbxKWHVal.Text) * Customer.USAGECHARGE;
                 //AvgBill = (TotalKWH * AvgBill + bill) / Convert.ToDecimal(CustomerNumber);
                 //Fast way of calculating due to static costs
                 AvgBill = m_customerList.Count * Customer.ADMINCHARGE + TotalKWH * Customer.USAGECHARGE;
-                                btnResetCustomer_Click(sender, e);
-                lblAddCustomerMsg.Text = "Account No " + (AccountNumber-1).ToString() + " Submitted";
+                btnResetCustomer_Click(sender, e);
+                lblAddCustomerMsg.Text = "Account No " + (AccountNumber - 1).ToString() + " Submitted";
             }
             catch
             {
@@ -120,8 +121,11 @@ namespace ElectricityBillApplication
             grpbxData.Visible = true;
             grpbxAddCustomer.Visible = false;
             btnViewCustomer.BackColor = Color.White;
-            btnResetCustomer_Click(sender, e);
+            btnAddCustomer.BackColor = System.Drawing.SystemColors.Control;
+
             lblTotalCustomerVal.Text = m_customerList.Count.ToString();
+            lblTotalKWHVal.Text = TotalKWH.ToString("F");
+            lblAverageBillVal.Text = AvgBill.ToString("C");
         }
     }
 }

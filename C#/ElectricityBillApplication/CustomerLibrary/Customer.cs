@@ -51,7 +51,7 @@ namespace ElectricityBillApplication
 
         public override string ToString()
         {
-            return FirstName +" " + LastName + " used " + KWHUsed.ToString("F") + "KWH. The bill comes out to " + BillAmt.ToString("C");
+            return FirstName +" " + LastName + " used " + KWHUsed.ToString("F") + "KWH and spent " + BillAmt.ToString("C");
         }
     }
 }

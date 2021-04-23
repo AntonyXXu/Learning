@@ -43,12 +43,14 @@ namespace ElectricityBillApplication
             this.txtbxFirstName = new System.Windows.Forms.TextBox();
             this.txtbxKWHVal = new System.Windows.Forms.TextBox();
             this.grpbxData = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalKWH = new System.Windows.Forms.Label();
-            this.lblAverageBill = new System.Windows.Forms.Label();
-            this.lblTotalCustomerVal = new System.Windows.Forms.Label();
-            this.lblTotalKWHVal = new System.Windows.Forms.Label();
+            this.lstbxCustomers = new System.Windows.Forms.ListBox();
             this.lblAverageBillVal = new System.Windows.Forms.Label();
+            this.lblTotalKWHVal = new System.Windows.Forms.Label();
+            this.lblTotalCustomerVal = new System.Windows.Forms.Label();
+            this.lblAverageBill = new System.Windows.Forms.Label();
+            this.lblTotalKWH = new System.Windows.Forms.Label();
+            this.lblCustomerList = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnSubmitNewCustomer = new System.Windows.Forms.Button();
             this.btnResetCustomer = new System.Windows.Forms.Button();
             this.grpbxAddCustomer = new System.Windows.Forms.GroupBox();
@@ -181,55 +183,39 @@ namespace ElectricityBillApplication
             // 
             // grpbxData
             // 
+            this.grpbxData.Controls.Add(this.lstbxCustomers);
             this.grpbxData.Controls.Add(this.lblAverageBillVal);
             this.grpbxData.Controls.Add(this.lblTotalKWHVal);
             this.grpbxData.Controls.Add(this.lblTotalCustomerVal);
             this.grpbxData.Controls.Add(this.lblAverageBill);
             this.grpbxData.Controls.Add(this.lblTotalKWH);
+            this.grpbxData.Controls.Add(this.lblCustomerList);
             this.grpbxData.Controls.Add(this.label7);
-            this.grpbxData.Location = new System.Drawing.Point(862, 75);
+            this.grpbxData.Location = new System.Drawing.Point(24, 86);
             this.grpbxData.Name = "grpbxData";
             this.grpbxData.Size = new System.Drawing.Size(749, 306);
             this.grpbxData.TabIndex = 0;
             this.grpbxData.TabStop = false;
             // 
-            // label7
+            // lstbxCustomers
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(83, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Customers";
+            this.lstbxCustomers.FormattingEnabled = true;
+            this.lstbxCustomers.ItemHeight = 15;
+            this.lstbxCustomers.Location = new System.Drawing.Point(417, 67);
+            this.lstbxCustomers.Name = "lstbxCustomers";
+            this.lstbxCustomers.Size = new System.Drawing.Size(310, 184);
+            this.lstbxCustomers.TabIndex = 6;
             // 
-            // lblTotalKWH
+            // lblAverageBillVal
             // 
-            this.lblTotalKWH.AutoSize = true;
-            this.lblTotalKWH.Location = new System.Drawing.Point(83, 122);
-            this.lblTotalKWH.Name = "lblTotalKWH";
-            this.lblTotalKWH.Size = new System.Drawing.Size(94, 15);
-            this.lblTotalKWH.TabIndex = 0;
-            this.lblTotalKWH.Text = "Total kWh Usage";
-            // 
-            // lblAverageBill
-            // 
-            this.lblAverageBill.AutoSize = true;
-            this.lblAverageBill.Location = new System.Drawing.Point(83, 204);
-            this.lblAverageBill.Name = "lblAverageBill";
-            this.lblAverageBill.Size = new System.Drawing.Size(69, 15);
-            this.lblAverageBill.TabIndex = 0;
-            this.lblAverageBill.Text = "Average Bill";
-            // 
-            // lblTotalCustomerVal
-            // 
-            this.lblTotalCustomerVal.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTotalCustomerVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotalCustomerVal.Location = new System.Drawing.Point(83, 73);
-            this.lblTotalCustomerVal.Margin = new System.Windows.Forms.Padding(3);
-            this.lblTotalCustomerVal.Name = "lblTotalCustomerVal";
-            this.lblTotalCustomerVal.Size = new System.Drawing.Size(209, 23);
-            this.lblTotalCustomerVal.TabIndex = 2;
-            this.lblTotalCustomerVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAverageBillVal.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblAverageBillVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAverageBillVal.Location = new System.Drawing.Point(83, 228);
+            this.lblAverageBillVal.Margin = new System.Windows.Forms.Padding(3);
+            this.lblAverageBillVal.Name = "lblAverageBillVal";
+            this.lblAverageBillVal.Size = new System.Drawing.Size(209, 23);
+            this.lblAverageBillVal.TabIndex = 2;
+            this.lblAverageBillVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalKWHVal
             // 
@@ -242,16 +228,52 @@ namespace ElectricityBillApplication
             this.lblTotalKWHVal.TabIndex = 2;
             this.lblTotalKWHVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblAverageBillVal
+            // lblTotalCustomerVal
             // 
-            this.lblAverageBillVal.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAverageBillVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAverageBillVal.Location = new System.Drawing.Point(83, 228);
-            this.lblAverageBillVal.Margin = new System.Windows.Forms.Padding(3);
-            this.lblAverageBillVal.Name = "lblAverageBillVal";
-            this.lblAverageBillVal.Size = new System.Drawing.Size(209, 23);
-            this.lblAverageBillVal.TabIndex = 2;
-            this.lblAverageBillVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotalCustomerVal.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTotalCustomerVal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotalCustomerVal.Location = new System.Drawing.Point(83, 73);
+            this.lblTotalCustomerVal.Margin = new System.Windows.Forms.Padding(3);
+            this.lblTotalCustomerVal.Name = "lblTotalCustomerVal";
+            this.lblTotalCustomerVal.Size = new System.Drawing.Size(209, 23);
+            this.lblTotalCustomerVal.TabIndex = 2;
+            this.lblTotalCustomerVal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblAverageBill
+            // 
+            this.lblAverageBill.AutoSize = true;
+            this.lblAverageBill.Location = new System.Drawing.Point(83, 204);
+            this.lblAverageBill.Name = "lblAverageBill";
+            this.lblAverageBill.Size = new System.Drawing.Size(69, 15);
+            this.lblAverageBill.TabIndex = 0;
+            this.lblAverageBill.Text = "Average Bill";
+            // 
+            // lblTotalKWH
+            // 
+            this.lblTotalKWH.AutoSize = true;
+            this.lblTotalKWH.Location = new System.Drawing.Point(83, 122);
+            this.lblTotalKWH.Name = "lblTotalKWH";
+            this.lblTotalKWH.Size = new System.Drawing.Size(94, 15);
+            this.lblTotalKWH.TabIndex = 0;
+            this.lblTotalKWH.Text = "Total kWh Usage";
+            // 
+            // lblCustomerList
+            // 
+            this.lblCustomerList.AutoSize = true;
+            this.lblCustomerList.Location = new System.Drawing.Point(417, 49);
+            this.lblCustomerList.Name = "lblCustomerList";
+            this.lblCustomerList.Size = new System.Drawing.Size(99, 15);
+            this.lblCustomerList.TabIndex = 0;
+            this.lblCustomerList.Text = "List of Customers";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(83, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(92, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Total Customers";
             // 
             // btnSubmitNewCustomer
             // 
@@ -308,7 +330,7 @@ namespace ElectricityBillApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 509);
+            this.ClientSize = new System.Drawing.Size(802, 509);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnViewCustomer);
             this.Controls.Add(this.grpbxData);
@@ -350,6 +372,8 @@ namespace ElectricityBillApplication
         private System.Windows.Forms.Button btnResetCustomer;
         private System.Windows.Forms.GroupBox grpbxAddCustomer;
         private System.Windows.Forms.Label lblAddCustomerMsg;
+        private System.Windows.Forms.ListBox lstbxCustomers;
+        private System.Windows.Forms.Label lblCustomerList;
     }
 }
 
