@@ -70,7 +70,12 @@ namespace SimpleClass
             Console.WriteLine("\nTotal inventory is " + totalInventory.ToString("c"));
 
             Console.WriteLine("\n\nPress any key");
+
+            Food test = new Food("apple", 5.00m, new DateTime(2021, 5, 13));
+            Console.WriteLine(test.ToString());
             Console.ReadKey();
+
+
         }
     }
 }
