@@ -14,6 +14,10 @@ namespace ElectricityBillApplication
     public partial class ElectricityBill : Form
     {
         private int AccountNumber = 1000000;
+        public int CustomerNumber { get; set; }
+        public decimal TotalKWH { get; set; }
+        public decimal AvgBill { get; set; }
+
 
         public ElectricityBill()
         {
@@ -22,6 +26,8 @@ namespace ElectricityBillApplication
 
         private void ElectricityBill_Load(object sender, EventArgs e)
         {
+            CustomerNumber = 0;
+            TotalKWH = AvgBill = 0;
             grpbxAddCustomer.Visible = false;
         }
 
@@ -53,18 +59,26 @@ namespace ElectricityBillApplication
 
         private void btnSubmitNewCustomer_Click(object sender, EventArgs e)
         {
-            try {
-            if (checkEmpty(txtbxFirstName) || checkEmpty(txtbxLastName) || checkEmpty(txtbxKWHVal))
+            try
             {
-                MessageBox.Show("All Fields must be filled");
-                return;
-            }
-        
-            int accountNo = Convert.ToInt32(lblAccountNumberValue.Text);
-            decimal KWH = decimal.Parse(txtbxKWHVal.Text);
-            Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
-            AccountNumber++;
-            btnResetCustomer_Click(sender, e);
+                if (checkEmpty(txtbxFirstName) || checkEmpty(txtbxLastName) || checkEmpty(txtbxKWHVal))
+                {
+                    MessageBox.Show("All Fields must be filled");
+                    return;
+                }
+
+                int accountNo = Convert.ToInt32(lblAccountNumberValue.Text);
+                decimal KWH = decimal.Parse(txtbxKWHVal.Text);
+                Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
+                AccountNumber++;
+                TotalKWH += KWH;
+                CustomerNumber++;
+                //Realistic way of calculating Average Bill
+                AvgBill = (TotalKWH * AvgBill + decimal.Parse(lblPredictedBillVal.Text)) / CustomerNumber;
+                //Fast way of calculating due to static costs
+                AvgBill = CustomerNumber * Customer.ADMINCHARGE + TotalKWH * Customer.USAGECHARGE;
+
+                btnResetCustomer_Click(sender, e);
             }
             catch
             {
@@ -80,8 +94,7 @@ namespace ElectricityBillApplication
 
         private void txtbxKWHVal_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
+                        if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -89,13 +102,6 @@ namespace ElectricityBillApplication
             {
                 e.Handled = true;
             }
-            //if (e.KeyChar == '.' && txtbxKWHVal.Text.Length == 0)
-            //{
-            //    e.Handled = true;
-            //    txtbxKWHVal.Text = "0.";
-            //}
-
-            lblCustomerError.Text = e.KeyChar.ToString();
         }
     }
 }
