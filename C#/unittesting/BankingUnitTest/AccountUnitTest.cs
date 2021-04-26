@@ -78,7 +78,7 @@ namespace BankingUnitTest
             actualBalance = acct.Balance;
 
             // Assert
-            Assert.AreEqual(expectedBalance, actualBalance);
+            Assert.AreEqual(expectedBalance,actualBalance);
         }
 
 
