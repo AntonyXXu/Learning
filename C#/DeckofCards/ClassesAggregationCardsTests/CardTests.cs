@@ -19,6 +19,12 @@ namespace ClassesAggregationCards.Tests
             Suit suit = (Suit)4;
             crd = new Card(suit, rank);
             Assert.IsNotNull(crd);
+
+            Rank a = crd.rank;
+            Suit b = crd.suit;
+
+            
+
         }
     }
 }
