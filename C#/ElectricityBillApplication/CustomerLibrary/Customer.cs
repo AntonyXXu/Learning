@@ -1,12 +1,21 @@
 ﻿using System;
 
+/********************
+ * 
+ *  Class Declaration for Customer
+ * 
+********************/
+
+
 namespace ElectricityBillApplication
 {
     public class Customer
     {
+        //Initialize static vars
         public static decimal ADMINCHARGE = 12.0m;
         public static decimal USAGECHARGE = 0.07m;
 
+        //Constructor, autocalculate charges
         public Customer(int Account, string Fname, string Lname, decimal kWh)
         {
             AccountNo = Account;

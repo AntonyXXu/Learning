@@ -50,7 +50,7 @@ namespace ElectricityBillApplication
             this.lblAverageBill = new System.Windows.Forms.Label();
             this.lblTotalKWH = new System.Windows.Forms.Label();
             this.lblCustomerList = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalCustomers = new System.Windows.Forms.Label();
             this.btnSubmitNewCustomer = new System.Windows.Forms.Button();
             this.btnResetCustomer = new System.Windows.Forms.Button();
             this.grpbxAddCustomer = new System.Windows.Forms.GroupBox();
@@ -180,6 +180,7 @@ namespace ElectricityBillApplication
             this.txtbxKWHVal.Size = new System.Drawing.Size(209, 23);
             this.txtbxKWHVal.TabIndex = 2;
             this.txtbxKWHVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtbxKWHVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxKWHVal_KeyPress);
             // 
             // grpbxData
             // 
@@ -190,7 +191,7 @@ namespace ElectricityBillApplication
             this.grpbxData.Controls.Add(this.lblAverageBill);
             this.grpbxData.Controls.Add(this.lblTotalKWH);
             this.grpbxData.Controls.Add(this.lblCustomerList);
-            this.grpbxData.Controls.Add(this.label7);
+            this.grpbxData.Controls.Add(this.lblTotalCustomers);
             this.grpbxData.Location = new System.Drawing.Point(24, 86);
             this.grpbxData.Name = "grpbxData";
             this.grpbxData.Size = new System.Drawing.Size(749, 306);
@@ -266,14 +267,14 @@ namespace ElectricityBillApplication
             this.lblCustomerList.TabIndex = 0;
             this.lblCustomerList.Text = "List of Customers";
             // 
-            // label7
+            // lblTotalCustomers
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(83, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 15);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Total Customers";
+            this.lblTotalCustomers.AutoSize = true;
+            this.lblTotalCustomers.Location = new System.Drawing.Point(83, 49);
+            this.lblTotalCustomers.Name = "lblTotalCustomers";
+            this.lblTotalCustomers.Size = new System.Drawing.Size(92, 15);
+            this.lblTotalCustomers.TabIndex = 0;
+            this.lblTotalCustomers.Text = "Total Customers";
             // 
             // btnSubmitNewCustomer
             // 
@@ -367,7 +368,7 @@ namespace ElectricityBillApplication
         private System.Windows.Forms.Label lblTotalCustomerVal;
         private System.Windows.Forms.Label lblAverageBill;
         private System.Windows.Forms.Label lblTotalKWH;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblTotalCustomers;
         private System.Windows.Forms.Button btnSubmitNewCustomer;
         private System.Windows.Forms.Button btnResetCustomer;
         private System.Windows.Forms.GroupBox grpbxAddCustomer;

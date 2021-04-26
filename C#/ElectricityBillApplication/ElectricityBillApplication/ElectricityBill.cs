@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*****************************************
+ * 
+ *  Form for Application Bill
+ * 
+*****************************************/
 
 namespace ElectricityBillApplication
 {
     public partial class ElectricityBill : Form
     {
+        //Initialize data for form
         private int AccountNumber = 1000000;
         public decimal TotalKWH { get; set; }
         public decimal AvgBill { get; set; }
@@ -24,6 +30,7 @@ namespace ElectricityBillApplication
             InitializeComponent();
         }
 
+        //On load, make all views invisible and create a new list
         private void ElectricityBill_Load(object sender, EventArgs e)
         {
             TotalKWH = AvgBill = 0;
@@ -32,6 +39,7 @@ namespace ElectricityBillApplication
             m_customerList = new List<Customer>();
         }
 
+        //Change Views, reset the form
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             grpbxAddCustomer.Visible = true;
@@ -41,6 +49,7 @@ namespace ElectricityBillApplication
             btnResetCustomer_Click(sender, e);
         }
 
+        //Reset the form
         private void btnResetCustomer_Click(object sender, EventArgs e)
         {
             lblAccountNumberValue.Text = AccountNumber.ToString();
@@ -51,6 +60,7 @@ namespace ElectricityBillApplication
             lblAddCustomerMsg.Text = "";
         }
 
+        //On changing KWH changes, automatically update the bill
         private void txtbxKWHVal_TextChange(object sender, EventArgs e)
         {
             if (txtbxKWHVal.Text == "" || txtbxKWHVal.Text == ".")
@@ -61,6 +71,7 @@ namespace ElectricityBillApplication
             lblPredictedBillVal.Text = bill.ToString("c");
         }
 
+        //Try to submit - if error, send a msgbx
         private void btnSubmitNewCustomer_Click(object sender, EventArgs e)
         {
             try
@@ -71,6 +82,7 @@ namespace ElectricityBillApplication
                     return;
                 }
 
+                //Initialize new customer and add to list. Increment Acct Num for next val
                 int accountNo = Convert.ToInt32(lblAccountNumberValue.Text);
                 decimal KWH = decimal.Parse(txtbxKWHVal.Text);
                 Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
@@ -79,9 +91,6 @@ namespace ElectricityBillApplication
                 AccountNumber++;
                 TotalKWH += KWH;
 
-                //Alternate way of calculating Average Bill
-                //decimal bill = Customer.ADMINCHARGE + decimal.Parse(txtbxKWHVal.Text) * Customer.USAGECHARGE;
-                //AvgBill = (TotalKWH * AvgBill + bill) / Convert.ToDecimal(CustomerNumber);
                 //Fast way of calculating due to static costs
                 AvgBill = m_customerList.Count * Customer.ADMINCHARGE + TotalKWH * Customer.USAGECHARGE;
                 btnResetCustomer_Click(sender, e);
@@ -99,13 +108,16 @@ namespace ElectricityBillApplication
             return txtbx.Text == "";
         }
 
+        //Validate text input
         private void txtbxKWHVal_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '.' && !char.IsControl(e.KeyChar))
+            if (!char.IsDigit(e.KeyChar) 
+                && e.KeyChar != '.' 
+                && !char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
             }
-            if (e.KeyChar == '.' && txtbxKWHVal.Text.Contains('.'))
+            else if (e.KeyChar == '.' && txtbxKWHVal.Text.Contains('.'))
             {
                 e.Handled = true;
             }
@@ -116,6 +128,7 @@ namespace ElectricityBillApplication
             Application.Exit();
         }
 
+        //Change view to view data
         private void btnViewCustomer_Click(object sender, EventArgs e)
         {
             grpbxData.Visible = true;
