@@ -180,6 +180,7 @@ namespace ElectricityBillApplication
             this.txtbxKWHVal.Size = new System.Drawing.Size(209, 23);
             this.txtbxKWHVal.TabIndex = 2;
             this.txtbxKWHVal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtbxKWHVal.TextChanged += new System.EventHandler(this.txtbxKWHVal_TextChange);
             this.txtbxKWHVal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbxKWHVal_KeyPress);
             // 
             // grpbxData

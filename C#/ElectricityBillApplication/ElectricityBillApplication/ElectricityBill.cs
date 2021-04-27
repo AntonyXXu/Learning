@@ -23,7 +23,7 @@ namespace ElectricityBillApplication
         public decimal TotalKWH { get; set; }
         public decimal AvgBill { get; set; }
 
-        private List<Customer> m_customerList;
+        public List<Customer> m_customerList;
 
         public ElectricityBill()
         {
@@ -59,6 +59,20 @@ namespace ElectricityBillApplication
             lblPredictedBillVal.Text = "";
             lblAddCustomerMsg.Text = "";
         }
+        //Validate text input
+        private void txtbxKWHVal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar)
+                && e.KeyChar != '.'
+                && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && txtbxKWHVal.Text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
 
         //On changing KWH changes, automatically update the bill
         private void txtbxKWHVal_TextChange(object sender, EventArgs e)
@@ -86,6 +100,7 @@ namespace ElectricityBillApplication
                 int accountNo = Convert.ToInt32(lblAccountNumberValue.Text);
                 decimal KWH = decimal.Parse(txtbxKWHVal.Text);
                 Customer newCust = new Customer(accountNo, txtbxFirstName.Text, txtbxLastName.Text, KWH);
+
                 m_customerList.Add(newCust);
                 lstbxCustomers.Items.Add(newCust.ToString());
                 AccountNumber++;
@@ -108,20 +123,6 @@ namespace ElectricityBillApplication
             return txtbx.Text == "";
         }
 
-        //Validate text input
-        private void txtbxKWHVal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) 
-                && e.KeyChar != '.' 
-                && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            else if (e.KeyChar == '.' && txtbxKWHVal.Text.Contains('.'))
-            {
-                e.Handled = true;
-            }
-        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {

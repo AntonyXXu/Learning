@@ -55,7 +55,7 @@ namespace ElectricityBillApplication
             decimal charge3 = cust.calculateCharge();
 
             //Assert
-            Assert.AreEqual(exp1, charge1);
+            Assert.AreEqual(1, charge1);
             Assert.AreEqual(exp2, charge2);
             Assert.AreEqual(exp3, charge3);
         }
