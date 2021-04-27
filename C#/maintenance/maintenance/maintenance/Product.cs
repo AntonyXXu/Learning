@@ -3,7 +3,7 @@
 
 namespace maintenance
 {
-    class Product
+    public class Product
     {
         public Product(string c, string d, decimal p)
         {
