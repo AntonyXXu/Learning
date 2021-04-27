@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace maintenance
 {
-    public partial class Form1 : Form
+    public partial class formProduct : Form
     {
-        public Form1()
+        public formProduct()
         {
             InitializeComponent();
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
