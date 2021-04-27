@@ -12,6 +12,8 @@ namespace maintenance
 {
     public partial class formProduct : Form
     {
+        List<Product> prodList = new List<Product>();
+
         public formProduct()
         {
             InitializeComponent();
@@ -21,5 +23,18 @@ namespace maintenance
         {
             Application.Exit();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            formAdd addfrm = new formAdd();
+            //Product product = addfrm.getNewProd();
+            //if (product != null) ;
+            //{
+            //    prodList.Add(product);
+            //    updateListView();
+            //}
+        }
+
+
     }
 }
