@@ -31,6 +31,10 @@ namespace employeeClass
             rrspPercent = rrsp;
         }
         public decimal rrspPercent { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + " rrsp = " + rrspPercent.ToString("f");
+        }
     }
 
 
