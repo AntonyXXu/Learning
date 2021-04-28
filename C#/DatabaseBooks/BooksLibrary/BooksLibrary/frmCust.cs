@@ -37,5 +37,17 @@ namespace BooksLibrary
         {
             updateView();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtID.Text);
+            Customer c1 = context.Customers.Find(id);
+
+            c1.Name = txtName.Text;
+            c1.Address = txtAddress.Text;
+            context.SaveChanges();
+                        
+            updateView();
+        }
     }
 }

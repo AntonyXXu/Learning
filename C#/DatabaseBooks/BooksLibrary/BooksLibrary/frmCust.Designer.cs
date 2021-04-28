@@ -36,6 +36,8 @@ namespace BooksLibrary
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_ID
@@ -76,7 +78,6 @@ namespace BooksLibrary
             // 
             this.txtName.Location = new System.Drawing.Point(121, 66);
             this.txtName.Name = "txtName";
-            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(100, 23);
             this.txtName.TabIndex = 2;
             // 
@@ -84,7 +85,6 @@ namespace BooksLibrary
             // 
             this.txtAddress.Location = new System.Drawing.Point(121, 111);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(100, 23);
             this.txtAddress.TabIndex = 2;
             // 
@@ -98,11 +98,33 @@ namespace BooksLibrary
             this.btnFind.UseVisualStyleBackColor = true;
             this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(285, 238);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(423, 238);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // formCust
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnFind);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtName);
@@ -127,6 +149,8 @@ namespace BooksLibrary
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnFind;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
