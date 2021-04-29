@@ -38,6 +38,7 @@ namespace BooksLibrary
             this.btnFind = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_ID
@@ -118,11 +119,22 @@ namespace BooksLibrary
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnFind_Click);
             // 
+            // btnInvoice
+            // 
+            this.btnInvoice.Location = new System.Drawing.Point(121, 294);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(75, 23);
+            this.btnInvoice.TabIndex = 4;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
+            // 
             // formCust
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnFind);
@@ -151,6 +163,7 @@ namespace BooksLibrary
         private System.Windows.Forms.Button btnFind;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnInvoice;
     }
 }
 

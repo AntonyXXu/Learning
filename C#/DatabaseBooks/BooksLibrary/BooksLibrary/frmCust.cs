@@ -49,5 +49,11 @@ namespace BooksLibrary
                         
             updateView();
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            frmInvoice newInvoice = new frmInvoice();
+            newInvoice.Show();
+        }
     }
 }
