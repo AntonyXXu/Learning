@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using BooksLibrary.Models;
 
+
 namespace BooksLibrary
 {
     public partial class frmInvoice : Form
@@ -19,9 +20,21 @@ namespace BooksLibrary
 
         private void frmInvoice_Load(object sender, EventArgs e)
         {
-            dGridInvoice.DataSource = context.Invoices;
+            context = new MMABooksContext();
+            dGridInvoice.AutoGenerateColumns = false;
+            context.Invoices.
+            //dGridInvoice.DataSource = context.Invoices.
+            
         }
 
-  
+        private void dGridInvoice_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridView dg = (System.Windows.Forms.DataGridView)sender;
+            if (dg.SelectedRows.Count > 0)
+            {
+                int x = 0;
+            }
+            
+        }
     }
 }
