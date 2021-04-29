@@ -12,9 +12,10 @@ public:
   List();
   void insert(int val);
   void deleteList();
-  void deleteRecursion()
+  void deleteRecursion();
 private:
   Node* m_head;
+  void del_helper(Node* ptr);
 };
 List::List() {
   m_head = nullptr;
@@ -37,7 +38,17 @@ void List::deleteList() {
 }
 
 void List::deleteRecursion() {
+  del_helper(m_head);
+}
 
+void List::del_helper(Node* ptr) {
+  if (ptr == nullptr) {
+    return;
+  }
+  Node* del = ptr;
+  ptr = ptr->next;
+  delete del;
+  del_helper(ptr);
 }
 
 int main()
@@ -47,7 +58,7 @@ int main()
   {
     a.insert(i * i);
   }
-  a.deleteList();
+  a.deleteRecursion();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
