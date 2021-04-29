@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StackUsingQueue", "StackUsi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "findNextLargestInt", "findNextLargestInt\findNextLargestInt.vcxproj", "{8FF16DD2-1232-4CA8-B104-7604C68C5EDE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassInheritance", "ClassInheritance\ClassInheritance.vcxproj", "{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{8FF16DD2-1232-4CA8-B104-7604C68C5EDE}.Release|x64.Build.0 = Release|x64
 		{8FF16DD2-1232-4CA8-B104-7604C68C5EDE}.Release|x86.ActiveCfg = Release|Win32
 		{8FF16DD2-1232-4CA8-B104-7604C68C5EDE}.Release|x86.Build.0 = Release|Win32
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Debug|x64.ActiveCfg = Debug|x64
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Debug|x64.Build.0 = Debug|x64
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Debug|x86.ActiveCfg = Debug|Win32
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Debug|x86.Build.0 = Debug|Win32
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Release|x64.ActiveCfg = Release|x64
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Release|x64.Build.0 = Release|x64
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Release|x86.ActiveCfg = Release|Win32
+		{B18A4299-1B3F-46AF-9E98-7C2EE5C28BED}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
