@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassInheritance", "ClassIn
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecursiveDeleteLL", "RecursiveDeleteLL\RecursiveDeleteLL.vcxproj", "{0F187C2E-238E-40DB-936E-236219DC91C5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxRecursion", "maxRecursion\maxRecursion.vcxproj", "{C4E22330-A1A0-47CA-9C4A-95056248C505}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{0F187C2E-238E-40DB-936E-236219DC91C5}.Release|x64.Build.0 = Release|x64
 		{0F187C2E-238E-40DB-936E-236219DC91C5}.Release|x86.ActiveCfg = Release|Win32
 		{0F187C2E-238E-40DB-936E-236219DC91C5}.Release|x86.Build.0 = Release|Win32
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Debug|x64.ActiveCfg = Debug|x64
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Debug|x64.Build.0 = Debug|x64
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Debug|x86.ActiveCfg = Debug|Win32
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Debug|x86.Build.0 = Debug|Win32
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Release|x64.ActiveCfg = Release|x64
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Release|x64.Build.0 = Release|x64
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Release|x86.ActiveCfg = Release|Win32
+		{C4E22330-A1A0-47CA-9C4A-95056248C505}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
