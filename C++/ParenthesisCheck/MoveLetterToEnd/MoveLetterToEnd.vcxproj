@@ -24,6 +24,7 @@
     <ProjectGuid>{13d3a198-b743-4f20-9121-76739392f94d}</ProjectGuid>
     <RootNamespace>MoveLetterToEnd</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MoveLetterToEndRecursion</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

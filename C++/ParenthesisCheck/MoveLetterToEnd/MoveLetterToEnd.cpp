@@ -2,10 +2,27 @@
 // Move all the 'x' chars in a string to the end
 
 #include <iostream>
+#include <string>
+using namespace std;
+
+string endX(string str) {
+  if (str.size() == 1) {
+    return str;
+  }
+  if (str[0] == 'x') {
+    return endX(str.substr(1)) + 'x';
+  }
+  return str[0] + endX(str.substr(1));
+
+}
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+  string res = endX("dfa;xxiogjsxfijdopa213xrg");
+  cout << res << endl;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
