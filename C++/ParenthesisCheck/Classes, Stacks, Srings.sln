@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxRecursion", "maxRecursio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MoveLetterToEndRecursion", "MoveLetterToEnd\MoveLetterToEnd.vcxproj", "{13D3A198-B743-4F20-9121-76739392F94D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sumOfDigitsRecursion", "sumOfDigitsRecursion\sumOfDigitsRecursion.vcxproj", "{362A56A7-50D7-4477-8514-C79091EA1BC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{13D3A198-B743-4F20-9121-76739392F94D}.Release|x64.Build.0 = Release|x64
 		{13D3A198-B743-4F20-9121-76739392F94D}.Release|x86.ActiveCfg = Release|Win32
 		{13D3A198-B743-4F20-9121-76739392F94D}.Release|x86.Build.0 = Release|Win32
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Debug|x64.ActiveCfg = Debug|x64
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Debug|x64.Build.0 = Debug|x64
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Debug|x86.ActiveCfg = Debug|Win32
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Debug|x86.Build.0 = Debug|Win32
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Release|x64.ActiveCfg = Release|x64
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Release|x64.Build.0 = Release|x64
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Release|x86.ActiveCfg = Release|Win32
+		{362A56A7-50D7-4477-8514-C79091EA1BC6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
