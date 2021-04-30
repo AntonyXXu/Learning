@@ -21,6 +21,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sumOfDigitsRecursion", "sum
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pallindromeRecursion", "pallendromeRecursion\pallendromeRecursion.vcxproj", "{E998A047-1293-4D60-846F-5C6EF86E7FC4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isPrimeRecursion", "isPrimeRecursion\isPrimeRecursion.vcxproj", "{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -101,6 +103,14 @@ Global
 		{E998A047-1293-4D60-846F-5C6EF86E7FC4}.Release|x64.Build.0 = Release|x64
 		{E998A047-1293-4D60-846F-5C6EF86E7FC4}.Release|x86.ActiveCfg = Release|Win32
 		{E998A047-1293-4D60-846F-5C6EF86E7FC4}.Release|x86.Build.0 = Release|Win32
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Debug|x64.ActiveCfg = Debug|x64
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Debug|x64.Build.0 = Debug|x64
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Debug|x86.Build.0 = Debug|Win32
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Release|x64.ActiveCfg = Release|x64
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Release|x64.Build.0 = Release|x64
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Release|x86.ActiveCfg = Release|Win32
+		{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
