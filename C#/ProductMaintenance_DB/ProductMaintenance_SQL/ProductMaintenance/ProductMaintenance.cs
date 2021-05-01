@@ -24,14 +24,28 @@ namespace ProductMaintenance
         private void frmProductMaintenance_Load(object sender, EventArgs e)
         {
             contextTS = new TechSupportContext();
-            currProduct = contextTS.Products.First();   //Select the first customer
+            display();
+        }
+
+        private void display()
+        {
             lstbxProducts.DataSource = contextTS.Products.ToList();
         }
 
         private Product getCurrent()
         {
-            Product currProduct = 
+            string ProdID = lstbxProducts.SelectedItem.ToString().Substring(0, 15).Trim();
+            return contextTS.Products.Find(ProdID);
+        }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Product selectedProd = getCurrent();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
