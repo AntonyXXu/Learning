@@ -35,7 +35,7 @@ namespace ProductMaintenance.Models
         public override string ToString()
         {
             return ProductCode.PadRight(15) + Name.PadRight(40) + 
-                Version.ToString("0.#").PadRight(8) + ReleaseDate.ToString("d");
+                Version.ToString("F1").PadRight(8) + ReleaseDate.ToString("d");
         }
     }
 }
