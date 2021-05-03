@@ -14,9 +14,11 @@ namespace ModifyProduct
     public partial class frmModifyProduct : Form
     {
         public Product selectedProduct { get; set; }
+        public TechSupportContext context { get; set; }
         public frmModifyProduct()
         {
             InitializeComponent();
+            txtMsg.Text ="Modify a product";
         }
 
         private void frmModifyProduct_Load(object sender, EventArgs e)
@@ -30,9 +32,14 @@ namespace ModifyProduct
         private void btnModify_Click(object sender, EventArgs e)
         {
             selectedProduct.Name = txtName.Text.Trim();
-            selectedProduct.ProductCode = txtProductCode.Text.Trim();
             selectedProduct.Version = Convert.ToDecimal(txtVersion.Text.Trim());
             selectedProduct.ReleaseDate = dateRelease.Value;
+            if (selectedProduct.Name == "" || selectedProduct.ProductCode == "" || txtVersion.Text.Trim() == "")
+            {
+                MessageBox.Show("No Fields can be Empty");
+            }
+            context.SaveChanges();
+            txtMsg.Text = "Product Modified!";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

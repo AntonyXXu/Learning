@@ -39,6 +39,7 @@ namespace ModifyProduct
             this.dateRelease = new System.Windows.Forms.DateTimePicker();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtMsg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblProductCode
@@ -82,6 +83,7 @@ namespace ModifyProduct
             this.txtProductCode.Location = new System.Drawing.Point(130, 32);
             this.txtProductCode.MaxLength = 10;
             this.txtProductCode.Name = "txtProductCode";
+            this.txtProductCode.ReadOnly = true;
             this.txtProductCode.Size = new System.Drawing.Size(234, 23);
             this.txtProductCode.TabIndex = 1;
             // 
@@ -129,11 +131,20 @@ namespace ModifyProduct
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtMsg
+            // 
+            this.txtMsg.Location = new System.Drawing.Point(130, 195);
+            this.txtMsg.Name = "txtMsg";
+            this.txtMsg.ReadOnly = true;
+            this.txtMsg.Size = new System.Drawing.Size(234, 23);
+            this.txtMsg.TabIndex = 15;
+            // 
             // frmModifyProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(423, 282);
+            this.Controls.Add(this.txtMsg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.dateRelease);
@@ -164,6 +175,7 @@ namespace ModifyProduct
         private System.Windows.Forms.DateTimePicker dateRelease;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtMsg;
     }
 }
 

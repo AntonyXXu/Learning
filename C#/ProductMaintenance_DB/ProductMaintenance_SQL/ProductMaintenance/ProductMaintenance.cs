@@ -41,8 +41,8 @@ namespace ProductMaintenance
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ModifyProduct.frmModifyProduct add = new ModifyProduct.frmModifyProduct();
-            add.selectedProduct = getCurrent();
+            AddProduct.frmAddProduct add = new AddProduct.frmAddProduct();
+            add.context = contextTS;
             add.ShowDialog();
         }
 
@@ -50,6 +50,7 @@ namespace ProductMaintenance
         {
             ModifyProduct.frmModifyProduct mod = new ModifyProduct.frmModifyProduct();
             mod.selectedProduct = getCurrent();
+            mod.context = contextTS;
             mod.ShowDialog();
         }
         private void btnExit_Click(object sender, EventArgs e)
@@ -57,6 +58,11 @@ namespace ProductMaintenance
             Application.Exit();
         }
 
-
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            Product selected = getCurrent();
+            contextTS.Products.Remove(selected);
+            display();
+        }
     }
 }

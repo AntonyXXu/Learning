@@ -39,6 +39,7 @@ namespace AddProduct
             this.lblAlternateData = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblProductCode = new System.Windows.Forms.Label();
+            this.txtMsg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancel
@@ -59,6 +60,7 @@ namespace AddProduct
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dateRelease
             // 
@@ -128,11 +130,20 @@ namespace AddProduct
             this.lblProductCode.TabIndex = 7;
             this.lblProductCode.Text = "Product Code";
             // 
+            // txtMsg
+            // 
+            this.txtMsg.Location = new System.Drawing.Point(129, 188);
+            this.txtMsg.Name = "txtMsg";
+            this.txtMsg.ReadOnly = true;
+            this.txtMsg.Size = new System.Drawing.Size(234, 23);
+            this.txtMsg.TabIndex = 14;
+            // 
             // frmAddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(427, 264);
+            this.Controls.Add(this.txtMsg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dateRelease);
@@ -162,6 +173,7 @@ namespace AddProduct
         private System.Windows.Forms.Label lblAlternateData;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblProductCode;
+        private System.Windows.Forms.TextBox txtMsg;
     }
 }
 

@@ -11,12 +11,14 @@ using ProductMaintenance.Models;
 
 namespace AddProduct
 {
+
     public partial class frmAddProduct : Form
     {
-        public Product selectedProduct { get; set; }
+        public TechSupportContext context { get; set; }
         public frmAddProduct()
         {
             InitializeComponent();
+            txtMsg.Text = "Add a Product!";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -37,5 +39,24 @@ namespace AddProduct
                 e.Handled = true;
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Product newProd = new Product();
+            newProd.Name = txtName.Text.Trim();
+            newProd.ProductCode = txtProductCode.Text.Trim();
+            newProd.Version = Convert.ToDecimal(txtVersion.Text.Trim());
+            newProd.ReleaseDate = dateRelease.Value;
+            if (newProd.Name == "" || newProd.ProductCode == "" || txtVersion.Text.Trim() == "")
+            {
+                MessageBox.Show("No Fields can be Empty");
+            }
+            
+            context.Products.Add(newProd);
+            context.SaveChanges();
+            txtMsg.Text = "New Product Added!";
+        }
+
+    
     }
 }
