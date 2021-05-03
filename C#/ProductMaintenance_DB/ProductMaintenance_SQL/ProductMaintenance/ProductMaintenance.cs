@@ -44,6 +44,7 @@ namespace ProductMaintenance
             AddProduct.frmAddProduct add = new AddProduct.frmAddProduct();
             add.context = contextTS;
             add.ShowDialog();
+            display();
         }
 
         private void btnModify_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace ProductMaintenance
             mod.selectedProduct = getCurrent();
             mod.context = contextTS;
             mod.ShowDialog();
+            display();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -62,6 +64,7 @@ namespace ProductMaintenance
         {
             Product selected = getCurrent();
             contextTS.Products.Remove(selected);
+            contextTS.SaveChanges();
             display();
         }
     }
