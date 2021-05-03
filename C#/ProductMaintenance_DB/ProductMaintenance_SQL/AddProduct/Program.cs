@@ -17,7 +17,7 @@ namespace AddProduct
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddProdcut());
+            Application.Run(new frmAddProduct());
         }
     }
 }

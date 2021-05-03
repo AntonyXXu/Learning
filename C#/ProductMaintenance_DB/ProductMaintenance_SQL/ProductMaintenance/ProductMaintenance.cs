@@ -41,7 +41,9 @@ namespace ProductMaintenance
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Product selectedProd = getCurrent();
+            ModifyProduct.frmModifyProduct add = new ModifyProduct.frmModifyProduct();
+            add.selectedProduct = getCurrent();
+            add.ShowDialog();
         }
 
         private void btnModify_Click(object sender, EventArgs e)
