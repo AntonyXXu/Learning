@@ -29,13 +29,34 @@ void printReverse(Node* head) {
   cout << head->val;
 }
 
+Node* deleteAll(Node* head, int num) {
+  if (head == nullptr) {
+    return head;
+  }
+  if (head->val == num) {
+    Node* del = head;
+    head = head->next;
+    delete del;
+    head = deleteAll(head, num);
+  }
+  else {
+    head->next = deleteAll(head->next, num);
+  }
+  return head;
+
+}
+
 int main()
 {
   Node* p = nullptr;  
   Node* result = insert(p, 1);
   result = insert(result, 5);
   result = insert(result, -5);
-  
+  result = insert(result, 10);
+  result = insert(result, 10);
+  printReverse(result);
+  cout << endl;
+  result = deleteAll(result, 10);
   printReverse(result);
 }
 
