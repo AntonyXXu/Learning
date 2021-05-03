@@ -80,22 +80,23 @@ namespace ModifyProduct
             // txtProductCode
             // 
             this.txtProductCode.Location = new System.Drawing.Point(130, 32);
+            this.txtProductCode.MaxLength = 10;
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(234, 23);
             this.txtProductCode.TabIndex = 1;
-            this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(130, 73);
+            this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(234, 23);
             this.txtName.TabIndex = 1;
-            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtVersion
             // 
             this.txtVersion.Location = new System.Drawing.Point(130, 115);
+            this.txtVersion.MaxLength = 18;
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(234, 23);
             this.txtVersion.TabIndex = 1;

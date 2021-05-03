@@ -40,27 +40,18 @@ namespace ModifyProduct
             this.Close();
         }
 
-        private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textLength(sender, e, 10);
-        }
-
-        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textLength(sender, e, 18);
-        }
         private void txtVersion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            textLength(sender, e, 18);
-        }
-
-        private void textLength(object sender, KeyPressEventArgs e, int limit)
-        {
-            if (this.Text.Length > limit)
+            if (!char.IsDigit(e.KeyChar)
+             && e.KeyChar != '.'
+             && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '.' && txtVersion.Text.Contains('.'))
             {
                 e.Handled = true;
             }
         }
-
     }
 }
