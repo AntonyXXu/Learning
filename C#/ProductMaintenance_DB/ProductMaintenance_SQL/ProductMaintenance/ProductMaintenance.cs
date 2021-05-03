@@ -8,14 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProductMaintenance.Models;
+using System.Configuration;
 
 namespace ProductMaintenance
 {
     public partial class frmProductMaintenance : Form
     {
         TechSupportContext contextTS;
-        Product currProduct;
-
+        
         public frmProductMaintenance()
         {
             InitializeComponent();
@@ -24,6 +24,8 @@ namespace ProductMaintenance
         private void frmProductMaintenance_Load(object sender, EventArgs e)
         {
             contextTS = new TechSupportContext();
+            TechSupportContext.connectString =
+                ConfigurationManager.ConnectionStrings["TechSupport"].ConnectionString;
             display();
         }
 
