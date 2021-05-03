@@ -14,16 +14,15 @@ namespace ProductMaintenance
 {
     public partial class frmProductMaintenance : Form
     {
-        TechSupportContext contextTS;
-        
+        TechSupportContext contextTS = new TechSupportContext();
+       
         public frmProductMaintenance()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void frmProductMaintenance_Load(object sender, EventArgs e)
         {
-            contextTS = new TechSupportContext();
             TechSupportContext.connectString =
                 ConfigurationManager.ConnectionStrings["TechSupport"].ConnectionString;
             display();
