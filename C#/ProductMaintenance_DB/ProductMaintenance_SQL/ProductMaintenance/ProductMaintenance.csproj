@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\ModifyProduct\ModifyProduct.csproj" />
   </ItemGroup>
 
 </Project>

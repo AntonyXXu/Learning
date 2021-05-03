@@ -14,7 +14,6 @@ namespace ProductMaintenance.Models
         {
         }
 
-
         public TechSupportContext(DbContextOptions<TechSupportContext> options)
             : base(options)
         {

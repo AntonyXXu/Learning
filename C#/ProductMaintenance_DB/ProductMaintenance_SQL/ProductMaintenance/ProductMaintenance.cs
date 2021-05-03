@@ -15,10 +15,10 @@ namespace ProductMaintenance
     public partial class frmProductMaintenance : Form
     {
         TechSupportContext contextTS = new TechSupportContext();
-       
+
         public frmProductMaintenance()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private void frmProductMaintenance_Load(object sender, EventArgs e)
@@ -44,9 +44,16 @@ namespace ProductMaintenance
             Product selectedProd = getCurrent();
         }
 
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            ModifyProduct.frmModifyProduct mod = new ModifyProduct.frmModifyProduct();
+            mod.selectedProduct = getCurrent();
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+
     }
 }
