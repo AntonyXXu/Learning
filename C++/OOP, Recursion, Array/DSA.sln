@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestCommonSubstringRecur
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeLinkedListRecursion", "MergeLinkedListRecursion\MergeLinkedListRecursion.vcxproj", "{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumOverThresholdRecursion", "SumOverThresholdRecursion\SumOverThresholdRecursion.vcxproj", "{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}.Release|x64.Build.0 = Release|x64
 		{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}.Release|x86.ActiveCfg = Release|Win32
 		{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}.Release|x86.Build.0 = Release|Win32
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Debug|x64.ActiveCfg = Debug|x64
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Debug|x64.Build.0 = Debug|x64
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Debug|x86.ActiveCfg = Debug|Win32
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Debug|x86.Build.0 = Debug|Win32
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x64.ActiveCfg = Release|x64
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x64.Build.0 = Release|x64
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x86.ActiveCfg = Release|Win32
+		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
