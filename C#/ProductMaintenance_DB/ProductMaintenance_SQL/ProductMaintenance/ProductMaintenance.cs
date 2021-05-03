@@ -48,6 +48,7 @@ namespace ProductMaintenance
         {
             ModifyProduct.frmModifyProduct mod = new ModifyProduct.frmModifyProduct();
             mod.selectedProduct = getCurrent();
+            mod.ShowDialog();
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

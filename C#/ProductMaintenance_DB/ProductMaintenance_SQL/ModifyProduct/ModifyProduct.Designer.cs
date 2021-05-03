@@ -83,6 +83,7 @@ namespace ModifyProduct
             this.txtProductCode.Name = "txtProductCode";
             this.txtProductCode.Size = new System.Drawing.Size(234, 23);
             this.txtProductCode.TabIndex = 1;
+            this.txtProductCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductCode_KeyPress);
             // 
             // txtName
             // 
@@ -90,6 +91,7 @@ namespace ModifyProduct
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(234, 23);
             this.txtName.TabIndex = 1;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtVersion
             // 
@@ -97,6 +99,7 @@ namespace ModifyProduct
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.Size = new System.Drawing.Size(234, 23);
             this.txtVersion.TabIndex = 1;
+            this.txtVersion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVersion_KeyPress);
             // 
             // dateRelease
             // 
@@ -113,6 +116,7 @@ namespace ModifyProduct
             this.btnModify.TabIndex = 3;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnCancel
             // 
@@ -122,6 +126,7 @@ namespace ModifyProduct
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmModifyProduct
             // 

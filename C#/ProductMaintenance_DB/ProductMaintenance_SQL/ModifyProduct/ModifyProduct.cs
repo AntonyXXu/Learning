@@ -21,9 +21,46 @@ namespace ModifyProduct
 
         private void frmModifyProduct_Load(object sender, EventArgs e)
         {
-            txtName.Text = selectedProduct.Name;
-            txtProductCode.Text = selectedProduct.ProductCode;
-            txtVersion.Text = selectedProduct.Version.ToString("0.0");
+            txtName.Text = selectedProduct.Name.Trim();
+            txtProductCode.Text = selectedProduct.ProductCode.Trim();
+            txtVersion.Text = selectedProduct.Version.ToString("0.0").Trim();
+            dateRelease.Value = selectedProduct.ReleaseDate;
         }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            selectedProduct.Name = txtName.Text.Trim();
+            selectedProduct.ProductCode = txtProductCode.Text.Trim();
+            selectedProduct.Version = Convert.ToDecimal(txtVersion.Text.Trim());
+            selectedProduct.ReleaseDate = dateRelease.Value;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textLength(sender, e, 10);
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textLength(sender, e, 18);
+        }
+        private void txtVersion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textLength(sender, e, 18);
+        }
+
+        private void textLength(object sender, KeyPressEventArgs e, int limit)
+        {
+            if (this.Text.Length > limit)
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
