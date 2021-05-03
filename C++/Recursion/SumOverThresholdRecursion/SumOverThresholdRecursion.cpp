@@ -42,7 +42,6 @@ int sumOverThreshold(int x[], int length, int threshold) {
   return helper(x, length, threshold, sum, index);
 }
 
-
 int main()
 {
   int arr[5] = { 1,3,5,7,9 };
