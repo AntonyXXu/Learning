@@ -1,35 +1,33 @@
 // SortNDuplicates_below100.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Sort an array of integers, the integers can have duplicates. Also, the integers are between 1 to 100
 
 #include <iostream>
 
-int randomSum(int n) {
-  int counter = 0;
-  int sum = 0;
-  for (int i = 0; i < n; i++) {
-    for (int j = 0; j < i; j++) {
-      if (rand() % 2 == 1) {
-        sum += 1;
-      }
-      for (int k = 0; k < j * i; k += j) {
-        counter += 1;
-        if (rand() % 2 == 2) {
-          sum += 1;
-        }
-      }
-    }
+void sort(int arr[], int length) {
+  int nums[100] = { 0 };
+  for (int i = 0; i < length; i++) {
+    int val = arr[i];
+    nums[val - 1] += 1;
   }
-  return counter;
+  int index = 0;
+  for (int i = 0; i < length; i++) {
+    while (nums[index] == 0) {
+      index += 1;
+    }
+    arr[i] = index + 1;
+    nums[index] -= 1;
+  }
 }
 
 
 int main()
 {
-  std::cout << randomSum(1) << std::endl;
-  std::cout << randomSum(2) << std::endl;
-  std::cout << randomSum(3) << std::endl;
-  std::cout << randomSum(4) << std::endl;
-  std::cout << randomSum(1000) << std::endl;
+  int arr[10] = { 3,5,12,1,100,59,1,59,5,3 };
+  sort(arr, 10);
+  for (int i = 0; i < 10; i++) {
+    std::cout << arr[i] << std::endl;
+  }
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
