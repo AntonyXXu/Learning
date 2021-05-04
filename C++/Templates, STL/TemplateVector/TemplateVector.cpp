@@ -18,8 +18,28 @@ private:
 
 template<typename T>
 Vector<T>::Vector() {
+  T arr[] = 
   m_size = 0;
-    m_capacity = 10;
+  m_capacity = 1;
+}
+template<typename T>
+Vector<T>::~Vector() {
+  delete[] m_arr;
+}
+
+template<typename T>
+void Vector<T>::pushBack(T data) {
+  if (m_size == m_capacity) {
+    m_capacity *= 2;
+    T* newArr = new T[m_capacity];
+    for (int i = 0; i < m_size; i++) {
+      newArr[i] = m_arr[i];
+    }
+    delete[] m_arr;
+    m_arr = newArr;
+  }
+  m_arr[m_size] = data;
+  m_size++;
 }
 
 
