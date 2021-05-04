@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProductMaintenance.Models;
 
+// Add product form
+
 namespace AddProduct
 {
 
     public partial class frmAddProduct : Form
     {
+        //declaration of context
         public TechSupportContext context { get; set; }
         public frmAddProduct()
         {
@@ -26,6 +29,7 @@ namespace AddProduct
             this.Close();
         }
 
+        // version text validator
         private void txtVersion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar)
@@ -40,6 +44,7 @@ namespace AddProduct
             }
         }
 
+        // save new product into the database
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Product newProd = new Product();

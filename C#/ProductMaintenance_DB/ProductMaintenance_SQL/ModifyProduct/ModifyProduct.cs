@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProductMaintenance.Models;
 
+// Modify product form
+
 namespace ModifyProduct
 {
     public partial class frmModifyProduct : Form
     {
+        //properties for current product to edit and context
         public Product selectedProduct { get; set; }
         public TechSupportContext context { get; set; }
         public frmModifyProduct()
@@ -21,6 +24,7 @@ namespace ModifyProduct
             txtMsg.Text ="Modify a product";
         }
 
+        // load the database product into the form
         private void frmModifyProduct_Load(object sender, EventArgs e)
         {
             txtName.Text = selectedProduct.Name.Trim();
@@ -29,6 +33,7 @@ namespace ModifyProduct
             dateRelease.Value = selectedProduct.ReleaseDate;
         }
 
+        // update the database with changes
         private void btnModify_Click(object sender, EventArgs e)
         {
             selectedProduct.Name = txtName.Text.Trim();
@@ -42,11 +47,13 @@ namespace ModifyProduct
             txtMsg.Text = "Product Modified!";
         }
 
+        //close window
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //validation for version to ensure valid decimal
         private void txtVersion_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar)
