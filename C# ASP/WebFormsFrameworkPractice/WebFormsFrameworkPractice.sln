@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFormsDemo", "WebFormsDemo\WebFormsDemo.csproj", "{1EB6ED41-A3BF-484A-983C-3AD11C0B9C18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondaryDemoWebForm", "SecondaryDemoWebForm\SecondaryDemoWebForm.csproj", "{7DC41A0C-B6C1-431E-8588-775AFF161D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp3", "WebApp3\WebApp3.csproj", "{3EAFE925-306B-4125-991B-FBAAF395845E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1EB6ED41-A3BF-484A-983C-3AD11C0B9C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB6ED41-A3BF-484A-983C-3AD11C0B9C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB6ED41-A3BF-484A-983C-3AD11C0B9C18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DC41A0C-B6C1-431E-8588-775AFF161D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DC41A0C-B6C1-431E-8588-775AFF161D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DC41A0C-B6C1-431E-8588-775AFF161D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DC41A0C-B6C1-431E-8588-775AFF161D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAFE925-306B-4125-991B-FBAAF395845E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAFE925-306B-4125-991B-FBAAF395845E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAFE925-306B-4125-991B-FBAAF395845E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAFE925-306B-4125-991B-FBAAF395845E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
