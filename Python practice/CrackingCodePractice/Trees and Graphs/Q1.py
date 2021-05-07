@@ -32,4 +32,17 @@ q.push(2)
 while q.size!= 0:
     print(q.pop().val)
 
-        
+# Assuming graph is a directed graph
+def searchRoute(graph, nodeStart, nodeEnd):
+    bfs = Queue()
+    bfs.push(nodeStart)
+    st = set()
+    st.add(nodeStart)
+    while bfs.size:
+        curr = bfs.pop()
+        for next in graph[curr]:
+            if next == nodeEnd:
+                return True
+            st.add(next)
+            bfs.push(next)
+    return False
