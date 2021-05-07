@@ -41,22 +41,44 @@ class LL:
         self._inorder(curr.right, level+1)
 
     def validate(self):
-        node = self.root
-        val = None
-        return self.helper(node, val)
-    
-    def helper(self, node, val):
-        if not node:
+        if not self.root:
             return True
-        if not self.helper(node.left, val):
+        current = self.root
+        currVal = None
+        return self._validate(current, currVal)
+
+    def _validate(self, current, currVal):
+        if not current:
+            return True
+        left = self._validate(current.left, currVal)        
+        if not left:
             return False
-        if not val or val <= node.val:
-            val = node.val
+        if not currVal:
+            currVal = current.val
+        elif currVal > current.val:            
+            return False
         else:
-            return False
-        if not self.helper(node.right, val):
-            return False
-        return True
+            currVal = current.val
+        right = self._validate(current.right, currVal)
+        return right
+
+    # def validate(self):
+    #     node = self.root
+    #     val = None
+    #     return self.helper(node, val)
+    
+    # def helper(self, node, val):
+    #     if not node:
+    #         return True
+    #     if not self.helper(node.left, val):
+    #         return False
+    #     if not val or val <= node.val:
+    #         val = node.val
+    #     else:
+    #         return False
+    #     if not self.helper(node.right, val):
+    #         return False
+    #     return True
 
 
 
