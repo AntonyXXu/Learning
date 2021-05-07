@@ -10,6 +10,21 @@ def findNext(node):
         return current
     else:
         while current.parent:
-            if current.parent.val > node.val:
+            if current.parent.val > current.parent:
                 return current.parent
         return node
+    
+
+
+# def findNext(node):
+#     current = node
+#     if current.right:
+#         current = current.right
+#         while current.left:
+#             current = current.left
+#         return current
+#     else:
+#         while current.parent:
+#             if current.parent.val > node.val:
+#                 return current.parent
+#         return node
