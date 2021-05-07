@@ -39,23 +39,41 @@ class LL:
         self._inorder(curr.right, level+1)
 
     def check(self):
-        ptr = self.root
-        res = self._check(ptr, 1)
-        return res
+        level = 0
+        current = self.root
+        return self._check(current, level)
 
-    def _check(self, ptr, level):
-        if not ptr:
-            return level - 1
-        left = self._check(ptr.left, level+1)
-        if left < 0:
+    def _check(self, current, level):
+        if not current:
+            return level
+        leftL = self._check(current.left, level+1)
+        if leftL < 0:
             return -1
-        right = self._check(ptr.right, level+1)
-        if right < 0:
+        rightL = self._check(current.right, level+1)
+        if rightL < 0:
             return -1
-        if abs(left - right) > 1:
+        if abs(leftL - rightL) > 1:
             return -1
-        else:
-            return max(left, right)
+        return max(leftL, rightL)
+
+    # def check(self):
+    #     ptr = self.root
+    #     res = self._check(ptr, 1)
+    #     return res
+
+    # def _check(self, ptr, level):
+    #     if not ptr:
+    #         return level - 1
+    #     left = self._check(ptr.left, level+1)
+    #     if left < 0:
+    #         return -1
+    #     right = self._check(ptr.right, level+1)
+    #     if right < 0:
+    #         return -1
+    #     if abs(left - right) > 1:
+    #         return -1
+    #     else:
+    #         return max(left, right)
 
 
 x = [i*i for i in range(10)]
