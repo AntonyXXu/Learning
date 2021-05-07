@@ -16,14 +16,19 @@ def insertionsort(data):
 y = insertionsort([3, 4, 5, 6, 7, 8, 9, 0, 1, 2])
 print(y)      
 
+
+
+
 def insertionSort(arr):
+    if len(arr) <= 1:
+        return
     for i in range(1,len(arr)):
-        temp = arr[i]
         j = i
-        while j > 0 and arr[j-1]>temp:
+        val = arr[j]
+        while j > 0 and val < arr[j-1]:
             arr[j] = arr[j-1]
-            j -= 1
-        arr[j] = temp
+            j-=1
+        arr[j] = val
     return arr
 
 

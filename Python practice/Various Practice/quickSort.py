@@ -26,7 +26,7 @@ def partition(arr, low, high):
     arr[ptr2] = pivotVal
     return ptr2
 
-#middle val
+middle val
 
 def quickSort(arr, low = 0, high = len(arr)-1):
     if low >= high:
