@@ -28,4 +28,20 @@ print(sortString(arr))
 
 
 def sortString2(arr):
-    
+    hash = {}
+    for string in arr:
+        s = "".join(sorted(string))
+        if not s in hash:
+            hash[s] = 1
+        else:
+            hash[s] += 1
+    return_val = []
+    for string, num in hash.items():
+        while num > 0:
+            return_val.append(string)
+            num-=1
+    return return_val
+
+print(sortString2(arr))
+
+
