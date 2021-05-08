@@ -1,5 +1,6 @@
 #Search in rotated sorted array
 x = [5,6,7,9,-4,3,4]
+x = [2,2,2,3,4,2]
 
 def findPivot(arr, low, high):
     if low >= high:
