@@ -27,4 +27,21 @@ def search(matrix, val):
 print(search(matrix, target))
 print(search(matrix1, target1))
 
+def search2(matrix, val):
+    if matrix == None or val == None:
+        return [-1, -1]
+    row = 0
+    col = len(matrix[0])-1
+    while row < len(matrix) and col >= 0:
+        x = matrix[row][col]
+        if matrix[row][col] == val:
+            return [row, col]
+        if matrix[row][col] > val:
+            col -= 1
+        else:
+            row += 1
+    return [-1,-1]
+
+print(search2(matrix1, target1))       
+print(search2(matrix, target))
 
