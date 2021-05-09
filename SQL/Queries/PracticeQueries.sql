@@ -18,3 +18,6 @@ SELECT * FROM Invoices
 WHERE (InvoiceDate > '01/01/2016'
     OR InvoiceTotal > 500)
     AND InvoiceTotal - PaymentTotal - CreditTotal > 0
+
+SELECT InvoiceNumber FROM Invoices 
+WHERE InvoiceDate BETWEEN '01/01/2016' AND '04/01/2016'
