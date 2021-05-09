@@ -14,13 +14,13 @@ print(pv(arr1))
 
 def optimalpv(arr):
     res = arr[:]
-    for i in range(1,len(arr)-1):
-        
-
-
-
-
-
+    for i in range(1,len(res)-1,2):
+        maxN = max(res[i-1], res[i], res[i+1])
+        if maxN != res[i]:
+            if maxN == res[i-1]:
+                res[i], res[i-1] = res[i-1], res[i]
+            else:
+                res[i], res[i+1] = res[i+1], res[i]
     return res
 
 print(optimalpv(arr))
