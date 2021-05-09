@@ -10,3 +10,6 @@ SELECT InvoiceDate,
 	GETDATE() AS Today, 
 	DATEDIFF(YEAR, InvoiceDate, GETDATE()) AS InvoiceAge
 FROM Invoices
+
+SELECT DISTINCT VendorCity, VendorState
+FROM Vendors
