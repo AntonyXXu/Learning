@@ -226,6 +226,30 @@ x = [7,1,5,3,6,4]
 y = [1,2,3,4,5]
 z = [7,6,4,3,1]
 
+def maxProfit(arr):
+    buy = False
+    i = 0
+    j = 0
+    profit = 0
+    while i < len(arr):
+        if not buy:
+            while i+1 < len(arr) and arr[i] >= arr[i+1]:
+                i += 1
+            j = i+1
+            buy = True
+            if j > len(arr) - 1:
+                break
+        else:
+            while j+1 < len(arr) and arr[j] < arr[j+1]:
+                j+=1
+            profit = profit + arr[j] - arr[i]
+            i = j
+            buy = False
+    return profit
+
+print(maxProfit(x))
+print(maxProfit(y))
+print(maxProfit(z))
 
 
 
