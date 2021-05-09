@@ -13,3 +13,8 @@ FROM Invoices
 
 SELECT DISTINCT VendorCity, VendorState
 FROM Vendors
+
+SELECT * FROM Invoices
+WHERE (InvoiceDate > '01/01/2016'
+    OR InvoiceTotal > 500)
+    AND InvoiceTotal - PaymentTotal - CreditTotal > 0
