@@ -23,7 +23,7 @@ class BST:
         self.size += 1
         
     def _insert(self, node, val):
-        if val > node.val:
+        if val >= node.val:
             if node.right:
                 self._insert(node.right, val)
             else:
@@ -34,8 +34,6 @@ class BST:
                self._insert(node.left, val)
             else:
                 node.left = Node(val)
-        else:
-            return
 
     def getRank(self, val):
         if not self.root:
@@ -47,12 +45,14 @@ class BST:
         if not curr:
             return -1
         if curr.val == val:
-            return 0
+            return curr.smaller
         if val < curr.val:
             res = self._counter(curr.left, val)
+            return -1 if res == -1 else res
         else:
-            res = self._counter(curr.right, val) + curr.smaller + 1
-        return -1 if res == -1 else res
+            res = self._counter(curr.right, val)
+            return -1 if res == -1 else res + curr.smaller + 1
+     
 
     def preorder(self):
         node = self.root
@@ -82,4 +82,4 @@ for num in arr:
     b.insert(num)
 b.inorder()
 
-print(b.getRank(1))
+print(b.getRank(2))
