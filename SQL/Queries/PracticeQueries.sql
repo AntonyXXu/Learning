@@ -21,3 +21,7 @@ WHERE (InvoiceDate > '01/01/2016'
 
 SELECT InvoiceNumber FROM Invoices 
 WHERE InvoiceDate BETWEEN '01/01/2016' AND '04/01/2016'
+
+SELECT VendorName, VendorCity
+FROM Vendors
+ORDER BY VendorName DESC
