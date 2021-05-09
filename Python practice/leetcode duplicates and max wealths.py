@@ -220,4 +220,13 @@ def twoSum(nums, target):
 
 ans = twoSum(nums, target)
 print(ans)
+# %% Best time to buy and sell stock
+
+x = [7,1,5,3,6,4]
+y = [1,2,3,4,5]
+z = [7,6,4,3,1]
+
+
+
+
 # %%

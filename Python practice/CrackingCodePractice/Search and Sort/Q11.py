@@ -11,3 +11,17 @@ def pv(arr):
 
 print(pv(arr))
 print(pv(arr1))
+
+def optimalpv(arr):
+    res = arr[:]
+    for i in range(1,len(arr)-1):
+        
+
+
+
+
+
+    return res
+
+print(optimalpv(arr))
+print(optimalpv(arr1))
