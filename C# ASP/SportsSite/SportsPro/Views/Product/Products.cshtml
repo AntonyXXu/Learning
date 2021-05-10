@@ -1,7 +1,36 @@
 ﻿
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Products";
 }
 
-<h1>View</h1>
-
+<h1>Products</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Release Date</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in @Model)
+        {
+        <tr>
+            <td>@product.Code</td>
+            <td>@product.Name</td>
+            <td>@($"{product.Price:C}")</td>
+            <td>
+                <a asp-controller="Product" asp-action="Detail"
+                   asp-route-id="@product.Slug">Edit</a>
+            </td>
+            <td>
+                <a asp-controller="Product" asp-action="Detail"
+                   asp-route-id="@product.Slug">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
