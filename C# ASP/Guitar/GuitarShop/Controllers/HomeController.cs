@@ -6,11 +6,13 @@ namespace GuitarShop.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Name = "Test";
             return View();
         }
 
         public IActionResult About()
         {
+            ViewBag.Name = "Test";
             return View();
         }
     }
