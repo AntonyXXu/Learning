@@ -34,4 +34,7 @@ FROM Agents
 WHERE (AgtFirstName + ' ' + AgtLastName = 'Janice Dahl') AND FeeAmt > 0
 
 
-SELECT Customers
+SELECT [CustCity] AS City, Count(CustomerID)
+FROM Customers
+GROUP BY [CustCity]
+
