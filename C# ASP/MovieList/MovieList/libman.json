@@ -9,6 +9,14 @@
     {
       "library": "jQuery.my@1.2.9",
       "destination": "wwwroot/lib/jQuery.my/"
+    },
+    {
+      "library": "jQuery.my@1.2.14",
+      "destination": "wwwroot/lib/jQuery.my/"
+    },
+    {
+      "library": "twitter-bootstrap@4.6.0",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
     }
   ]
 }
