@@ -38,3 +38,8 @@ SELECT [CustCity] AS City, Count(CustomerID)
 FROM Customers
 GROUP BY [CustCity]
 
+SELECT COUNT(ProductID) as Total, SupName
+FROM Suppliers
+	JOIN Products_Suppliers ON Products_Suppliers.SupplierID = Suppliers.SupplierId
+GROUP BY Suppliers.SupName
+HAVING COUNT(ProductID) > 1
