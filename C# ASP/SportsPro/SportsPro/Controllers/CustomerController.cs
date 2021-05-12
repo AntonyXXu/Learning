@@ -10,10 +10,11 @@ namespace SportsPro.Controllers
     public class CustomerController : Controller
     {
         private SportsProContext context { get; set; }
+        private List<Country> countries { get; set; }
         public CustomerController(SportsProContext ctx)
         {
             context = ctx;
-
+            countries = context.Countries.ToList();
         }
 
         public IActionResult List()
@@ -25,13 +26,14 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Country = context.Countries.ToList();
+            ViewBag.Country = countries;
             return View(new Customer());
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewBag.Country = countries;
             Customer cust = context.Customers.Find(id);
             return View(cust);
         }
