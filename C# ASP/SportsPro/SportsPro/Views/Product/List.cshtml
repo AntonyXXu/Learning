@@ -14,27 +14,28 @@
                 <th>Release Date</th>
                 <th></th>
                 <th></th>
-                <th></th>
+
             </tr>
         </thead>
         <tbody>
             @foreach (var product in Model)
             {
-            <tr>
-                <td>@product.ProductCode</td>
-                <td>@product.Name</td>
-                <td>@($"{product.YearlyPrice:C}")</td>
-                <td>@product.ReleaseDate</td>
-                <td>
-                    <a asp-controller="Product" asp-action="Edit"
-                       asp-route-id="@product.ProductID">Edit</a>
-                </td>
-                <td>
-                    <a asp-controller="Product" asp-action="Delete"
-                       asp-route-id="@product.ProductID"
-                       method ="post">Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@product.ProductCode</td>
+                    <td>@product.Name</td>
+                    <td>@($"{product.YearlyPrice:C}")</td>
+                    <td>@product.ReleaseDate</td>
+                    <td>
+                        <form asp-action="Edit" asp-route-id="@product.ProductID" asp method="get">
+                            <input type="submit" value="Edit" />
+                        </form>
+                    </td>
+                    <td>
+                        <form asp-action="Delete" asp-route-id="@product.ProductID" method="post">
+                            <input type="submit" value="Delete" />
+                        </form>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
