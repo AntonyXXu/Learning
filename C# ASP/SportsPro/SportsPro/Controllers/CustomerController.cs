@@ -25,6 +25,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.Country = context.Countries.ToList();
             return View(new Customer());
         }
 
