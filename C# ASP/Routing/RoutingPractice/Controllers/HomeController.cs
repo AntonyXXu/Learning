@@ -45,5 +45,11 @@ namespace RoutingPractice.Controllers
             return Content("testpriv");
         }
 
+        [Route("prod/{id?}")]
+        public IActionResult prodId(string? id)
+        {
+            return Content("input is " + id);
+        }
+
     }
 }
