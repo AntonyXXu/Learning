@@ -18,7 +18,7 @@ namespace SportsPro.Controllers
 
         public IActionResult List()
         {
-            List<Customer> customers = context.Customer.ToList();
+            List<Customer> customers = context.Customers.ToList();
             return View(customers);
         }
 
