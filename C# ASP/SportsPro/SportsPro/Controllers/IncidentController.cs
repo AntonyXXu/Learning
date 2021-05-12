@@ -17,32 +17,32 @@ namespace SportsPro.Controllers
 
         public IActionResult List()
         {
-            List<Technician> technicians = context.Technicians.ToList();
-            return View(technicians);
+            List<Incident> incidents = context.Incidents.ToList();
+            return View(incidents);
         }
 
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View(new Technician());
+            return View(new Incident());
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            Technician tech = context.Technicians.Find(id);
+            Incident tech = context.Incidents.Find(id);
             return View(tech);
         }
 
         [HttpPost]
-        public IActionResult Add(Technician tech)
+        public IActionResult Add(Incident incident)
         {
             try
             {
-                context.Technicians.Add(tech);
+                context.Incidents.Add(incident);
                 context.SaveChanges();
-                return RedirectToAction("List", "Technician");
+                return RedirectToAction("List", "Incident");
             }
             catch
             {
@@ -51,13 +51,13 @@ namespace SportsPro.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Technician tech)
+        public IActionResult Edit(Incident incident)
         {
             try
             {
-                context.Technicians.Update(tech);
+                context.Incidents.Update(incident);
                 context.SaveChanges();
-                return RedirectToAction("List", "Technician");
+                return RedirectToAction("List", "Incident");
             }
             catch
             {
@@ -70,10 +70,10 @@ namespace SportsPro.Controllers
         {
             try
             {
-                Technician tech = context.Technicians.Find(id);
-                context.Technicians.Remove(tech);
+                Incident incident = context.Incidents.Find(id);
+                context.Incidents.Remove(incident);
                 context.SaveChanges();
-                return RedirectToAction("List", "Technician");
+                return RedirectToAction("List", "Incident");
             }
             catch
             {
