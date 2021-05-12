@@ -29,3 +29,12 @@ body {
   white-space: nowrap;
   line-height: 40px; /* Vertically center the text there */
 }
+
+.bg-primary {
+    background-color: darkslateblue !important;
+}
+
+.btn-primary{
+    background-color: darkslateblue;
+    border-color: darkslateblue;
+}
