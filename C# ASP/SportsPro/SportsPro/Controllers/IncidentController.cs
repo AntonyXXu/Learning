@@ -9,9 +9,77 @@ namespace SportsPro.Controllers
 {
     public class IncidentController : Controller
     {
-        public IActionResult Index()
+        private SportsProContext context { get; set; }
+        public IncidentController(SportsProContext ctx)
         {
-            return View();
+            context = ctx;
         }
+
+        public IActionResult List()
+        {
+            List<Technician> technicians = context.Technicians.ToList();
+            return View(technicians);
+        }
+
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            return View(new Technician());
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            Technician tech = context.Technicians.Find(id);
+            return View(tech);
+        }
+
+        [HttpPost]
+        public IActionResult Add(Technician tech)
+        {
+            try
+            {
+                context.Technicians.Add(tech);
+                context.SaveChanges();
+                return RedirectToAction("List", "Technician");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Technician tech)
+        {
+            try
+            {
+                context.Technicians.Update(tech);
+                context.SaveChanges();
+                return RedirectToAction("List", "Technician");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                Technician tech = context.Technicians.Find(id);
+                context.Technicians.Remove(tech);
+                context.SaveChanges();
+                return RedirectToAction("List", "Technician");
+            }
+            catch
+            {
+                return View("List");
+            }
+        }
+
     }
 }
