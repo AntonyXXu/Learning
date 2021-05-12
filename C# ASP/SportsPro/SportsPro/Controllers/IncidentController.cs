@@ -11,9 +11,7 @@ namespace SportsPro.Controllers
     public class IncidentController : Controller
     {
         private SportsProContext context { get; set; }
-        private List<Product> products { get; set; }
-        private List<Technician> technicians { get; set; }
-        private List<Customer> customers { get; set; }
+
         public IncidentController(SportsProContext ctx)
         {
             context = ctx;
@@ -33,7 +31,9 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            
+            ViewBag.customers = context.Customers.ToList();
+            ViewBag.products = context.Products.ToList();
+            ViewBag.technicians = context.Technicians.ToList();
             return View(new Incident());
         }
 
