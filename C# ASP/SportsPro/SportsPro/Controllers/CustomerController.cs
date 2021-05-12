@@ -18,31 +18,31 @@ namespace SportsPro.Controllers
 
         public IActionResult List()
         {
-            List<Product> products = context.Products.ToList();
-            return View(products);
+            List<Customer> customers = context.Customer.ToList();
+            return View(customers);
         }
 
         [HttpGet]
         public IActionResult Add()
         {
-            return View(new Product());
+            return View(new Customer());
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            Product prod = context.Products.Find(id);
-            return View(prod);
+            Customer cust = context.Customers.Find(id);
+            return View(cust);
         }
 
         [HttpPost]
-        public IActionResult Add(Product prod)
+        public IActionResult Add(Customer cust)
         {
             try
             {
-                context.Products.Add(prod);
+                context.Customers.Add(cust);
                 context.SaveChanges();
-                return RedirectToAction("List", "Product");
+                return RedirectToAction("List", "Customer");
             }
             catch
             {
@@ -51,13 +51,13 @@ namespace SportsPro.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Product prod)
+        public IActionResult Edit(Customer cust)
         {
             try
             {
-                context.Products.Update(prod);
+                context.Customers.Update(cust);
                 context.SaveChanges();
-                return RedirectToAction("List", "Product");
+                return RedirectToAction("List", "Customer");
             }
             catch
             {
@@ -70,10 +70,10 @@ namespace SportsPro.Controllers
         {
             try
             {
-                Product prod = context.Products.Find(id);
-                context.Products.Remove(prod);
+                Customer cust = context.Customers.Find(id);
+                context.Customers.Remove(cust);
                 context.SaveChanges();
-                return RedirectToAction("List", "Product");
+                return RedirectToAction("List", "Customer");
             }
             catch
             {
