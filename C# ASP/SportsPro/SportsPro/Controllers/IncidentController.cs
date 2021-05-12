@@ -41,6 +41,9 @@ namespace SportsPro.Controllers
         public IActionResult Edit(int id)
         {
             Incident tech = context.Incidents.Find(id);
+            ViewBag.customers = context.Customers.ToList();
+            ViewBag.products = context.Products.ToList();
+            ViewBag.technicians = context.Technicians.ToList();
             return View(tech);
         }
 
