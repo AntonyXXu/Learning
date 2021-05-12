@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SportsPro.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SportsPro.Controllers
 {
     public class IncidentController : Controller
     {
         private SportsProContext context { get; set; }
+        private List<Product> products { get; set; }
+        private List<Technician> technicians { get; set; }
+        private List<Customer> customers { get; set; }
         public IncidentController(SportsProContext ctx)
         {
             context = ctx;
@@ -17,7 +21,11 @@ namespace SportsPro.Controllers
 
         public IActionResult List()
         {
-            List<Incident> incidents = context.Incidents.ToList();
+            List<Incident> incidents = context.Incidents
+                .Include(inc => inc.Customer)
+                .Include(inc => inc.Product)
+                .OrderBy(inc => inc.DateOpened)
+                .ToList();
             return View(incidents);
         }
 
@@ -25,6 +33,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            
             return View(new Incident());
         }
 
