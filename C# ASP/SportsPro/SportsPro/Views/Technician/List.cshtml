@@ -10,10 +10,9 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>Code</th>
                 <th>Name</th>
-                <th>Price</th>
-                <th>Release Date</th>
+                <th>Email</th>
+                <th>Phone</th>
                 <th></th>
                 <th></th>
 
@@ -23,7 +22,7 @@
             @foreach (var tech in Model)
             {
                 <tr>
-                    <td>@tech.Name</td>
+                    <td>@tech.FullName</td>
                     <td>@tech.Email</td>
                     <td>@tech.Phone</td>
                     <td>
