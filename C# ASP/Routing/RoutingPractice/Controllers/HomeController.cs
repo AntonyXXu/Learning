@@ -39,5 +39,11 @@ namespace RoutingPractice.Controllers
             return Content(contentString);
         }
 
+        [Route("testpriv")]
+        public IActionResult Priv()
+        {
+            return Content("testpriv");
+        }
+
     }
 }
