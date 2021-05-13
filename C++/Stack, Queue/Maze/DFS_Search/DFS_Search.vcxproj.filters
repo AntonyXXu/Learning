@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DFS_Search_Stack.cpp">
+    <ClCompile Include="BFS_Search.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
