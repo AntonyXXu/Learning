@@ -5,6 +5,28 @@
 #include <iostream>
 using namespace std;
 
+const char travelled = 'O';
+const char notTrav = '.';
+
+struct Coords {
+  Coords(int r, int c) : row(r), col(c) {}
+  int row;
+  int col;
+};
+
+void check(string maze[], int row, int col, stack<Coords>& coords) {
+  if (maze[row][col] == notTrav) {
+    coords.push(Coords(row, col));
+    maze[row][col] = travelled;
+  }
+}
+
+bool pathExists(string maze[], int nRows, int nCols, int startR, int startC, int endR, int endC) {
+  
+}
+
+
+
 
 int main()
 {
@@ -25,6 +47,13 @@ int main()
     cout << "Solvable!" << endl;
   else
     cout << "Out of luck!" << endl;
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      cout << maze[i][j];
+    }
+    cout << endl;
+  }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
