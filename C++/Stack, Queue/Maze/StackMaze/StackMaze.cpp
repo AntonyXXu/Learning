@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-const char travelled = 'O';
+const char travelled = ' ';
 const char notTrav = '.';
 
 struct Coords {
@@ -22,7 +22,23 @@ void check(string maze[], int row, int col, stack<Coords>& coords) {
 }
 
 bool pathExists(string maze[], int nRows, int nCols, int startR, int startC, int endR, int endC) {
-  
+  stack<Coords> coords;
+  check(maze, startR, startC, coords);
+
+  while (!coords.empty())
+  {
+    Coords curr = coords.top();
+    if (curr.row == endR && curr.col == endC) {
+      return true;
+    }
+    coords.pop();
+
+    check(maze, curr.row - 1, curr.col, coords);
+    check(maze, curr.row + 1, curr.col, coords);
+    check(maze, curr.row, curr.col - 1, coords);
+    check(maze, curr.row, curr.col + 1, coords);
+  }
+  return false;
 }
 
 
