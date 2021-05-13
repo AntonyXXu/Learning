@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumOverThresholdRecursion",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFS_Recursive", "DFS_Recursive\DFS_Recursive.vcxproj", "{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SubArray_Recursive", "SubArray_Recursive\SubArray_Recursive.vcxproj", "{61EB372D-9387-4C80-95BD-9DDFEF4CE488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x64.Build.0 = Release|x64
 		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x86.ActiveCfg = Release|Win32
 		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x86.Build.0 = Release|Win32
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Debug|x64.ActiveCfg = Debug|x64
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Debug|x64.Build.0 = Debug|x64
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Debug|x86.ActiveCfg = Debug|Win32
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Debug|x86.Build.0 = Debug|Win32
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Release|x64.ActiveCfg = Release|x64
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Release|x64.Build.0 = Release|x64
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Release|x86.ActiveCfg = Release|Win32
+		{61EB372D-9387-4C80-95BD-9DDFEF4CE488}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
