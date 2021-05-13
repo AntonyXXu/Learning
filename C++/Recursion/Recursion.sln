@@ -3,29 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClimbStairsTrapped_Recursion", "..\ClimbStairsTrapped_Recursion\ClimbStairsTrapped_Recursion.vcxproj", "{C41B12D9-DBDF-47FA-9680-60378A87F5C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClimbStairsTrapped_Recursion", "ClimbStairsTrapped_Recursion\ClimbStairsTrapped_Recursion.vcxproj", "{C41B12D9-DBDF-47FA-9680-60378A87F5C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isPrimeRecursion", "..\isPrimeRecursion\isPrimeRecursion.vcxproj", "{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isPrimeRecursion", "isPrimeRecursion\isPrimeRecursion.vcxproj", "{D44D72C1-3118-4C1D-9477-FBE6B0DE78CE}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isSolvableRecursion", "..\isSolvableRecursion\isSolvableRecursion.vcxproj", "{9CB54155-E2D1-447C-85EF-A8B8C92A383D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "isSolvableRecursion", "isSolvableRecursion\isSolvableRecursion.vcxproj", "{9CB54155-E2D1-447C-85EF-A8B8C92A383D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedListRecursion", "..\LinkedListRecursion\LinkedListRecursion.vcxproj", "{93E171CE-6EC8-41E5-946F-9470EEF39010}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedListRecursion", "LinkedListRecursion\LinkedListRecursion.vcxproj", "{93E171CE-6EC8-41E5-946F-9470EEF39010}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedListSortedRecursiveFunctions", "..\LinkedListSortedRecursiveFunctions\LinkedListSortedRecursiveFunctions.vcxproj", "{9187C2F0-C022-4462-9E37-B8EA12678998}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedListSortedRecursiveFunctions", "LinkedListSortedRecursiveFunctions\LinkedListSortedRecursiveFunctions.vcxproj", "{9187C2F0-C022-4462-9E37-B8EA12678998}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestCommonSubstringRecursive", "..\LongestCommonSubstringRecursive\LongestCommonSubstringRecursive.vcxproj", "{94CD77B7-B4F9-4A79-87C8-868F6F066180}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestCommonSubstringRecursive", "LongestCommonSubstringRecursive\LongestCommonSubstringRecursive.vcxproj", "{94CD77B7-B4F9-4A79-87C8-868F6F066180}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxRecursion", "..\maxRecursion\maxRecursion.vcxproj", "{C4E22330-A1A0-47CA-9C4A-95056248C505}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxRecursion", "maxRecursion\maxRecursion.vcxproj", "{C4E22330-A1A0-47CA-9C4A-95056248C505}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeLinkedListRecursion", "..\MergeLinkedListRecursion\MergeLinkedListRecursion.vcxproj", "{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MergeLinkedListRecursion", "MergeLinkedListRecursion\MergeLinkedListRecursion.vcxproj", "{DEA89699-A53E-404B-B49C-CEAC5BFFBA56}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pallindromeRecursion", "..\pallendromeRecursion\pallendromeRecursion.vcxproj", "{E998A047-1293-4D60-846F-5C6EF86E7FC4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pallindromeRecursion", "pallendromeRecursion\pallendromeRecursion.vcxproj", "{E998A047-1293-4D60-846F-5C6EF86E7FC4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecursiveDeleteLL", "..\RecursiveDeleteLL\RecursiveDeleteLL.vcxproj", "{0F187C2E-238E-40DB-936E-236219DC91C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RecursiveDeleteLL", "RecursiveDeleteLL\RecursiveDeleteLL.vcxproj", "{0F187C2E-238E-40DB-936E-236219DC91C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sumOfDigitsRecursion", "..\sumOfDigitsRecursion\sumOfDigitsRecursion.vcxproj", "{362A56A7-50D7-4477-8514-C79091EA1BC6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sumOfDigitsRecursion", "sumOfDigitsRecursion\sumOfDigitsRecursion.vcxproj", "{362A56A7-50D7-4477-8514-C79091EA1BC6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumOverThresholdRecursion", "..\SumOverThresholdRecursion\SumOverThresholdRecursion.vcxproj", "{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SumOverThresholdRecursion", "SumOverThresholdRecursion\SumOverThresholdRecursion.vcxproj", "{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DFS_Recursive", "DFS_Recursive\DFS_Recursive.vcxproj", "{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -131,6 +133,14 @@ Global
 		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x64.Build.0 = Release|x64
 		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x86.ActiveCfg = Release|Win32
 		{750F64D3-D206-4F0C-81C3-C7BC4B0D8F82}.Release|x86.Build.0 = Release|Win32
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Debug|x64.ActiveCfg = Debug|x64
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Debug|x64.Build.0 = Debug|x64
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Debug|x86.ActiveCfg = Debug|Win32
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Debug|x86.Build.0 = Debug|Win32
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x64.ActiveCfg = Release|x64
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x64.Build.0 = Release|x64
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x86.ActiveCfg = Release|Win32
+		{D29DE0A8-817C-4DF0-85AA-30895C93AC8D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
