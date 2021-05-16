@@ -193,8 +193,8 @@ print(ans.evendigits(b))
 print("two sum")
 nums = [2,7,11,15] 
 target = 18
-# nums = [3,2,4] 
-# target = 6
+nums = [3,2,4] 
+target = 6
 #   brute force
 #  def twoSum(nums, target):
 #     for i in range(len(nums)):
@@ -202,18 +202,6 @@ target = 18
 #             if nums[i] + nums[j] == target:
 #                 return [i,j]
 #     return False
-
-def twoSum(nums, target):
-    dictN = {}
-    for index, value in enumerate(nums):
-        remaining = target - nums[index]
-        if remaining in dictN:
-            return [index, dictN[remaining]]
-        dictN[value] = index
-
-
-
-
 
 def twoSum(nums, target):
     d = {}
