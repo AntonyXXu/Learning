@@ -20,4 +20,3 @@ y = "o"
 
 print(strStr("",""))
 print(strStr(x,y))
-
