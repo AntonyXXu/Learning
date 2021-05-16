@@ -3,7 +3,7 @@
 # return first instance index
 
 def strStr(s1, s2):
-    if s1 == s2:
+    if s1 == s2 or len(s2) == 0:
         return 0
     for i in range(len(s1)):
         eq = True
@@ -20,3 +20,4 @@ y = "o"
 
 print(strStr("",""))
 print(strStr(x,y))
+
