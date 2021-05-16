@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jan  4 15:18:22 2021
 
-@author: Test
-"""
 
 #%%
 #duplicates
@@ -217,6 +212,17 @@ def twoSum(nums, target):
         dictN[value] = index
 
 
+
+
+
+def twoSum(nums, target):
+    d = {}
+    for index, val in enumerate(nums):
+        rem = target - val
+        if rem not in d:
+            d[val] = index
+        else:
+            return [d[rem], index]
 
 ans = twoSum(nums, target)
 print(ans)
