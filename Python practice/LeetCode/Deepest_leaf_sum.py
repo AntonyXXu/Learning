@@ -20,7 +20,8 @@ def helper(node, level):
         return 0
     if level > deepest:
         deepest = level
-    elif level == deepest:
+        sum = 0
+    if level == deepest:
         sum += node.val
     helper(node.left, level+1)
     helper(node.right, level+1)
