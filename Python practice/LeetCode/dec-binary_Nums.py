@@ -27,7 +27,27 @@ def deciBinary(arr):
     return max
 
 def alternate(arr):
+    nums = [1]*len(arr)
+    lst = [int(i) for i in arr]
+    counter = 0
+    while True:
+        changes = False
+        for i in range(len(arr)):
+            if lst[i] == 0:
+                nums[i] = 0
+            if lst[i] > 0:
+                changes = True
+            lst[i] -= nums[i]
+        if not changes:
+            return counter
+        counter += 1
+
 
 print(deciBinary(n1))
 print(deciBinary(n3))
 print(deciBinary(n2))
+
+
+print(alternate(n1))
+print(alternate(n3))
+print(alternate(n2))
