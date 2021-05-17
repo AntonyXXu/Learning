@@ -33,3 +33,25 @@ def minOps(boxes):
 
 print(minOps(boxes))
 print(minOps(boxes1))
+
+
+def minOps2(boxes):
+    res = [0] * len(boxes)
+    prev = 0
+    ones = 0
+    for i in range(len(boxes)):
+        res[i] += prev
+        if boxes[i] == "1":
+            ones += 1
+        prev += ones
+    prev = 0
+    ones = 0
+    for j in range(len(boxes)-1, -1, -1):
+        res[j] += prev
+        if boxes[j] == "1":
+            ones += 1
+        prev += ones
+    return res
+
+print(minOps2(boxes))
+print(minOps2(boxes1))
