@@ -19,6 +19,9 @@ def minOps(n):
             res += j * 2 - 1
         return res
 
-for i in range(10):
-    print(minOps(i))
+def summationMin(n):
+    return n*n//4
 
+
+for i in range(10):
+    print(summationMin(i))
