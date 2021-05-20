@@ -38,42 +38,42 @@ class LL:
         print(level, curr.val)
         self._inorder(curr.right, level+1)
 
-    def check(self):
-        level = 0
-        current = self.root
-        return self._check(current, level)
-
-    def _check(self, current, level):
-        if not current:
-            return level
-        leftL = self._check(current.left, level+1)
-        if leftL < 0:
-            return -1
-        rightL = self._check(current.right, level+1)
-        if rightL < 0:
-            return -1
-        if abs(leftL - rightL) > 1:
-            return -1
-        return max(leftL, rightL)
-
     # def check(self):
-    #     ptr = self.root
-    #     res = self._check(ptr, 1)
-    #     return res
+    #     level = 0
+    #     current = self.root
+    #     return self._check(current, level)
 
-    # def _check(self, ptr, level):
-    #     if not ptr:
-    #         return level - 1
-    #     left = self._check(ptr.left, level+1)
-    #     if left < 0:
+    # def _check(self, current, level):
+    #     if not current:
+    #         return level
+    #     leftL = self._check(current.left, level+1)
+    #     if leftL < 0:
     #         return -1
-    #     right = self._check(ptr.right, level+1)
-    #     if right < 0:
+    #     rightL = self._check(current.right, level+1)
+    #     if rightL < 0:
     #         return -1
-    #     if abs(left - right) > 1:
+    #     if abs(leftL - rightL) > 1:
     #         return -1
-    #     else:
-    #         return max(left, right)
+    #     return max(leftL, rightL)
+
+
+    def check(self):
+        node = self.root
+        height = self._check(node)
+        return -1 if height < 0 else height
+
+    def _check(self, node):
+        if not node:
+            return 0
+        leftH = self._check(node.left) + 1
+        if leftH < 0:
+            return -2
+        rightH = self._check(node.right) + 1
+        if rightH < 0:
+            return -2
+        if abs(rightH - leftH) <= 1:
+            return max(leftH, rightH)
+        return -2
 
 
 x = [i*i for i in range(10)]
@@ -88,8 +88,8 @@ def mintree(arr, tree, low, high):
 
 
 mintree(x, lst, 0, len(x)-1)
-# lst.insert(-1)
-# lst.insert(-5)
+lst.insert(-1)
+lst.insert(-5)
 lst.insert(0.5)
 lst.insert(-10)
 lst.insert(-15)
