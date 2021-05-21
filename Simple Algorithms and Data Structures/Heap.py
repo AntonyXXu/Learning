@@ -71,6 +71,22 @@ class MaxHeap:
             i = (i-1)//2
         self.size += 1
 
+    def pop(self):
+        retv = self.arr[0]
+        self.arr[0] = self.arr[self.size-1]
+        self.size -= 1
+        self.arr[self.size] = None
+        i = 0
+        while (2*i + 1 < self.size and 2*i + 2 < self.size
+            and (self.arr[i] <self.arr[2*i + 1] or self.arr[2*i + 2])):
+                if self.arr[2*i + 1] > self.arr[2*i + 2]:
+                    self.arr[i], self.arr[2*i + 1] = self.arr[2*i + 1], self.arr[i]
+                    i = 2*i + 1
+                else:
+                    self.arr[i], self.arr[2*i + 2] = self.arr[2*i + 2], self.arr[i]
+                    i = 2*i + 2
+        return retv    
+        
 
 
 test = MaxHeap(5)
@@ -81,3 +97,8 @@ test.insert(10)
 test.insert(1)
 test.insert(15)
 print(test.arr)
+print(test.pop())
+print(test.pop())
+print(test.pop())
+print(test.arr)
+print(test.size)
