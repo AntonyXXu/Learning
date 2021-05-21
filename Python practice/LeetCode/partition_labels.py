@@ -12,7 +12,7 @@ def partition_labels(string):
     chars = {}
     for index, letter in enumerate(string):
         if letter not in chars:
-            chars[letter] = [index, len(string)]
+            chars[letter] = [index, index]
         else:
             chars[letter][1] = index
     min_i = None
@@ -25,7 +25,10 @@ def partition_labels(string):
             max_i = end
         elif start > max_i:
             res.append(max_i - min_i + 1)
-            max_i, min_i = None, None
+            min_i, max_i  = start, end
+    res.append(max_i - min_i + 1)
     return res
 
 print(partition_labels(s))
+print(partition_labels(""))
+print(partition_labels("a"))
