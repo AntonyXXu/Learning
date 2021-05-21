@@ -1,4 +1,5 @@
-class minHeap:
+class MinHeap:
+  
     def __init__(self, maxsize = 100):
         self.maxsize = maxsize
         self.heap = [0] * maxsize
@@ -36,7 +37,7 @@ class minHeap:
         self.count -= 1
         return retVal
     
-test = minHeap(5)
+test = MinHeap(5)
 test.insert(4)
 test.insert(3)
 test.insert(5)
@@ -49,3 +50,34 @@ print(test.pop())
 print(test.pop())
 print(test.heap)
 print(test.count)
+
+class MaxHeap:
+    def __init__(self, length = 10):
+        self.length = 10
+        self.arr = [None] * 10
+        self.size = 0
+
+    def insert(self, val):
+        if self.size == self.length:
+            temp = self.arr
+            self.length *= 2
+            self.arr = [None] * self.length
+            for i, num in enumerate(temp):
+                self.arr[i] = num
+        self.arr[self.size] = val
+        i = self.size      
+        while i > 0 and self.arr[i] > self.arr[(i-1)//2]:
+            self.arr[i], self.arr[(i-1)//2] = self.arr[(i-1)//2], self.arr[i]
+            i = (i-1)//2
+        self.size += 1
+
+
+
+test = MaxHeap(5)
+test.insert(4)
+test.insert(3)
+test.insert(5)
+test.insert(10)
+test.insert(1)
+test.insert(15)
+print(test.arr)
