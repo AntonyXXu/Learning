@@ -4,9 +4,6 @@ class minHeap:
         self.heap = [0] * maxsize
         self.count = 0
     
-    def leaf(self, index):
-        return index >= self.count//2 and index <= self.count
-    
     def insert(self, val):
         if self.count == self.maxsize:
             self.maxsize *= 2
