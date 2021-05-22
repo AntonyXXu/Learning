@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jan 22 14:44:35 2021
-
-@author: Test
-"""
-
-#%%
 class binaryTree():
     def __init__(self,element):
         self.key = element
@@ -66,3 +58,5 @@ test.setright(3)
 preorder(test)
 inorder(test)
 postorder(test)
+
+
