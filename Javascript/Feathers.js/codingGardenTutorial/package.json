@@ -1,0 +1,15 @@
+{
+  "name": "codinggardentutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "app start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@feathersjs/feathers": "^4.5.11"
+  }
+}
