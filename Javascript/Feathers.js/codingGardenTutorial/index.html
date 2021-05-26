@@ -12,7 +12,11 @@
   </head>
   <body>
   <h1> Feathers </h1>
-    <div id="app" class="flex flex-column"></div>
+  <form class="form" onsubmit="sendMsg(event.preventDefault())">
+    <input type="text" id="message-text" placeholder="Enter">
+    <button type = "submit" class="button button-pirmary"> Send </button>
+  
+  <div id="app" class="flex flex-column"></div>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.js"></script>
     <script src="//unpkg.com/@feathersjs/client@^4.3.0/dist/feathers.js"></script>
     <script src="/socket.io/socket.io.js"></script>
