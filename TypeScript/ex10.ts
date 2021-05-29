@@ -76,7 +76,7 @@ export type ApiResponse<T> =
       error: string;
     };
 
-export function promisify(arg: unknown): unknown {
+export function promisify<T>(arg: T): Promise<T> {
   return null;
 }
 
