@@ -11,19 +11,25 @@ def matrix(rowSum, colSum):
     res = [[0 for i in range(len(colSum))] for j in range(len(rowSum))]
     row = 0
     col = 0
-    while row < len(rowSum) and rowSum[row] > 0:
-        while col < len(colSum) and colSum[col] > 0 :
-            if rowSum[row] <= colSum[col]:
-                res[row][col] = rowSum[row]
-                rowSum[row] = 0
-                row += 1
-            else:
-                res[row][col] = colSum[col]
-                colSum[col] = 0
-                col += 1
-            if row >= len(rowSum) and row >= len(colSum):
-                return res
-        row += 1
+    while row < len(rowSum) and col < len(colSum) :
+        if rowSum[row] < colSum[col]:
+            res[row][col] = rowSum[row]
+            colSum[col] -= rowSum[row]
+            rowSum[row] = 0
+            
+        elif colSum[col] < rowSum[row]:
+            res[row][col] = colSum[col]
+            rowSum[row] -= colSum[col]
+            colSum[col] = 0
+            
+        else:
+            res[row][col] = rowSum[row]
+            rowSum[row] = 0
+            colSum[col] = 0
+        if rowSum[row] == 0:
+            row += 1
+        if colSum[col] == 0:
+            col += 1           
     return res
 
 print(matrix(rowSum, colSum))

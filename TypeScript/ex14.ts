@@ -117,7 +117,7 @@ export function filter(filterer, input) {
  * @param {Array} input
  * @return {* | Function}
  */
-export function reduce(reducer, initialValue, input) {
+export function reduce<T>(reducer: T[], initialValue: T, input) {
   if (arguments.length === 0) {
     return reduce;
   }
