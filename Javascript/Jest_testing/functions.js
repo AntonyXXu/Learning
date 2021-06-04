@@ -20,5 +20,4 @@ const functions = {
   },
 };
 
-functions.fetchUser();
 module.exports = functions;
