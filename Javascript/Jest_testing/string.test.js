@@ -9,5 +9,5 @@ test("fcn works", () => {
 });
 
 test("fcn works", () => {
-  expect(reverseString("Abc").toLowerCase()).toEqual("cba");
+  expect(reverseString("Abc")).toEqual("cba");
 });
