@@ -35,9 +35,8 @@ test("c in username", () => {
 });
 
 //Async
-test("username should be Chelsey Dietrich", () => {
-  expect.assertions(1);
-  functions.fetchUser().then((data) => {
-    expect(data.name).toEqual("Chelsey Dietrich");
-  });
+test("User fetched name should be Leanne Graham", async () => {
+  //   expect.assertions(1);
+  const data = await functions.fetchUser();
+  expect(data.name).toEqual("Leanne Graham");
 });

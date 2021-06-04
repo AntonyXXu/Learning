@@ -1,4 +1,4 @@
-const { default: axios } = require("axios");
+const axios = require("axios");
 
 const functions = {
   add: (a, b) => {
@@ -13,11 +13,12 @@ const functions = {
     return user;
   },
   fetchUser: () => {
-    axios
-      .get("http://jsonplaceholder.typicode.com/users//5")
+    return axios
+      .get("https://jsonplaceholder.typicode.com/users/1")
       .then((result) => result.data)
-      .catch((error) => error);
+      .catch((error) => "error");
   },
 };
 
+functions.fetchUser();
 module.exports = functions;
