@@ -33,3 +33,11 @@ test("c in username", () => {
   const usernames = ["a", "b", "c"];
   expect(usernames).toContain("c");
 });
+
+//Async
+test("username should be Chelsey Dietrich", () => {
+  expect.assertions(1);
+  functions.fetchUser().then((data) => {
+    expect(data.name).toEqual("Chelsey Dietrich");
+  });
+});
