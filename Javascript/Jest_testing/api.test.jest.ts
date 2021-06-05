@@ -1,4 +1,5 @@
 import { describe, it, expect } from "@jest/globals";
+import { TextEncoder } from "util";
 import { MyLambdaClient } from "aws-sdk";
 
 const LambdaClient = new MyLambdaClient();
@@ -6,7 +7,7 @@ const LambdaClient = new MyLambdaClient();
 describe("lambda fcn client-config-svc", () => {
   it("GET /api/clients can respond", async () => {
     //Arrange
-    const data = new TextEncoder("UTF-8").encode(
+    const data = new TextEncoder().encode(
       JSON.stringify({
         path: "/client-config-svc//api/clients",
         httpMethod: "GET",
@@ -28,11 +29,12 @@ describe("lambda fcn client-config-svc", () => {
     expect(response.body).not.toEqual(expect.arrayContaining(notExpected));
   });
 
-  it("GET /api/clients can respond", async () => {
+  it("GET /api/clients/{clientName} can respond", async () => {
     //Arrange
-    const data = new TextEncoder("UTF-8").encode(
+    const clientID = "niagara-wineries";
+    const data = new TextEncoder().encode(
       JSON.stringify({
-        path: "/client-config-svc/api",
+        path: `/client-config-svc/api/clients/${clientID}`,
         httpMethod: "GET",
       })
     );
@@ -43,6 +45,11 @@ describe("lambda fcn client-config-svc", () => {
     });
     //Assert
     expect(response.statusCode).toBe(200);
-    expect(response.body).toBe();
+    expect(response.body).toHaveProperty("clientID");
+    expect(response.body).toHaveProperty("clientName");
+    expect(response.body).toHaveProperty("brand");
+    expect(response.body).toHaveProperty("industry");
+    expect(response.body).toHaveProperty("status");
+    expect(response.body).toHaveProperty("country");
   });
 });
