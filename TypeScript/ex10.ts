@@ -77,7 +77,9 @@ export type ApiResponse<T> =
     };
 
 export function promisify<T>(arg: T): Promise<T> {
-  return null;
+  return new Promise<T>( (res, rej) => {
+      
+  });
 }
 
 const oldApi = {
