@@ -8,22 +8,22 @@ class Node:
 
 def delete(root, target):
     n = root
-    newR = helper(None, n, target)
+    newR = helper(n, target)
     return newR
 
-def helper(parent, node, target):
+def helper(node, target):
     if not node:
         return None
-    node.left = helper(node, node.left, target)
-    node.right = helper(node, node.right, target)
+    node.left = helper(node.left, target)
+    node.right = helper(node.right, target)
     if not node.left and not node.right and node.val == target:
         return None
     return node
         
 
 n = Node(2)
-n.left = Node(2)
-n.left.left = Node(2)
+n.left = Node(3)
+n.left.left = Node(5)
 n.left.left.right = Node(2)
 
 r = delete(n,2)
