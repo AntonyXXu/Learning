@@ -14,6 +14,7 @@ class FindElements:
         self._fix(n)
 
     def find(self,val):
+        return val in self.elem
         deq = collections.deque()
         n = self.root
         deq.appendleft(n)
