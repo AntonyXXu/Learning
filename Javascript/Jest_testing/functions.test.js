@@ -1,4 +1,5 @@
 const functions = require("./functions");
+const axios = require("axios");
 
 test("Add nums", () => {
   expect(functions.add(2, 2)).toBe(4);
@@ -39,4 +40,8 @@ test("User fetched name should be Leanne Graham", async () => {
   //   expect.assertions(1);
   const data = await functions.fetchUser();
   expect(data.name).toEqual("Leanne Graham");
+
+  const s = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+  console.log(s);
+  expect(s.data.name).toEqual("Leanne Graham");
 });
