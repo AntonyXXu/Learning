@@ -17,4 +17,4 @@ def countShips(b):
     return count
 
 print(countShips(b1))
-print(countShips(b2))
+print(countShips(b2)) 
