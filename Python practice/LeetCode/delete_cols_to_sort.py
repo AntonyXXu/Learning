@@ -9,7 +9,7 @@ def minDel(arr):
     
     for col in range(len(arr[0])):
         for row in range(1,len(arr)):
-            if ord(arr[row][col]) > ord(arr[row][0]):
+            if ord(arr[row][col]) < ord(arr[row-1][col]):
                 res += 1
                 break
     return res
