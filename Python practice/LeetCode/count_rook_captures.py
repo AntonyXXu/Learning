@@ -10,6 +10,7 @@ def rook(board):
             if board[row][col] == 'R':
                 r = row
                 c = col
+                break
     ans = 0
     for i in range(r, 0, -1):
         if board[i][c] == 'B':
