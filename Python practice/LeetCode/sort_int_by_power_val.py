@@ -40,3 +40,26 @@ print(kth(l2,h2,k2))
 print(kth(l3,h3,k3))
 print(kth(l4,h4,k4))
 print(kth(l5,h5,k5))
+
+def memo(lo, hi, k):
+    nums = { 1: 0 }
+    def pwr(val):
+        if val in nums:
+            return nums[val]
+        if val % 2 == 0:
+            return 1 + pwr(val//2)
+        else: 
+            return 1 + pwr(val * 3 + 1)
+    res = []
+    for i in range(lo, hi+1):
+        res.append([i,pwr(i)])
+    res.sort(key=lambda x: x[1])
+    return res[k-1][0]
+
+
+
+print(memo(l1,h1,k1))
+print(memo(l2,h2,k2))
+print(memo(l3,h3,k3))
+print(memo(l4,h4,k4))
+print(memo(l5,h5,k5))
