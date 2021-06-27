@@ -1,6 +1,7 @@
 package com.antonyxu;
 
 import java.awt.*;
+import java.util.Arrays;
 import java.util.Date;
 
 public class Main {
@@ -22,11 +23,26 @@ public class Main {
 //        pt1.x = 10;
 //        System.out.println(pt1.x);
 //        System.out.println(pt2);
+//
+//        String msg = "Hello \"me\"";
+//        msg += '!';
+//        System.out.println(msg);
+//        String path = "c:\\Windows\\...";
+//        System.out.println(path);
+//
+//        int[] nums = new int[10];
+//        nums[9] = 5;
+//        System.out.println(Arrays.toString(nums));
+//        int[] nums2 = {1,2,3,4,5};
+//        System.out.println(nums2);
+//
+//        int[][] matrix = new int[2][3];
+//        matrix[0][0] = 5;
+//        System.out.println(Arrays.deepToString(matrix));
 
-        String msg = "Hello \"me\"";
-        msg += '!';
-        System.out.println(msg);
-        String path = "c:\\Windows\\...";
-        System.out.println(path);
+        final int ONE = 1;
+        double total = ONE + (double) 3;
+        total += 2;
+        System.out.println(total);
     }
 }
