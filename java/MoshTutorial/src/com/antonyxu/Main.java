@@ -1,8 +1,10 @@
 package com.antonyxu;
 
 import java.awt.*;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
 
@@ -39,10 +41,32 @@ public class Main {
 //        int[][] matrix = new int[2][3];
 //        matrix[0][0] = 5;
 //        System.out.println(Arrays.deepToString(matrix));
+//
+//        final int ONE = 1;
+//        double total = ONE + (double) 3;
+//        total += 2;
+//        System.out.println(total);
+//
+//        String a = "5";
+//        int x = Integer.parseInt(a);
+//
+//        Math.round(1.1F);
+//        Math.ceil(1.1F);
+//        Math.floor(1.1F);
+//        int rand = (int) (Math.random()*100);
+//        System.out.println(rand);
+//
+//        NumberFormat val = NumberFormat.getCurrencyInstance();
+//        System.out.println(val.format(152.245));
+//
+//        Scanner scanner = new Scanner((System.in));
+//        System.out.print("Age: \t");
+//        byte age = scanner.nextByte();
+//        System.out.println(age);
+        Scanner scanner = new Scanner((System.in));
+        System.out.print("Name: \t");
+        String name = scanner.nextLine().trim();
+        System.out.println(name);
 
-        final int ONE = 1;
-        double total = ONE + (double) 3;
-        total += 2;
-        System.out.println(total);
     }
 }
