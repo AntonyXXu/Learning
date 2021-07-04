@@ -29,6 +29,23 @@ def intervalIntersection(firstList, secondList):
             j += 1
     return ans
 
+def intervalIntersection(firstList, secondList):
+    i = 0
+    j = 0
+    ans = []
+    while i < len(firstList) and j < len(secondList):
+        firstStart, firstEnd = firstList[i]
+        secondStart, secondEnd = secondList[j]
+        if firstStart <= secondEnd and secondStart <= firstEnd:
+            temp = [max(firstStart, secondStart), min(firstEnd, secondEnd)]
+            ans.append(temp)
+        
+        if firstEnd < secondEnd:
+            i += 1
+        else:
+            j += 1
+    return ans
+
 print(intervalIntersection(firstList = [[0,2],[5,10],[13,23],[24,25]], secondList = [[1,5],[8,12],[15,24],[25,26]])==[[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]])
 print(intervalIntersection( firstList = [[1,3],[5,9]], secondList = []))
 print(intervalIntersection(firstList = [], secondList = [[4,8],[10,12]]))
