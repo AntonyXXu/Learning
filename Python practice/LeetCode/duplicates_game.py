@@ -13,4 +13,4 @@ def dup(numbers):
     else:
         return "Bob"
 
-print(dup([1,1,2,2,3,3]))
+print(dup([1,1,2,12,3,3,12]))
