@@ -6,7 +6,7 @@ def constructRectangle(area):
     s = int(area**0.5) + 1
     while s > 0:
         if area % s == 0:
-            return [area // s, s]
+            return [max(area // s, s), min(area // s, s)]
         s -= 1
 
 print(constructRectangle(37))
