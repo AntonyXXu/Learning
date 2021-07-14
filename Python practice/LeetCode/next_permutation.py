@@ -9,7 +9,7 @@ def nextPermutation(nums):
         nums.reverse()
         return 
     pivot = i - 1
-    while nums[j] < nums[pivot]:
+    while nums[j] <= nums[pivot]:
         j -= 1
     nums[j], nums[pivot] = nums[pivot], nums[j]
     left = pivot + 1
@@ -24,4 +24,4 @@ def nextPermutation(nums):
 print(nextPermutation([1,2,3]))
 print(nextPermutation([3,2,1]))
 print(nextPermutation([1,1,3]))
-print(nextPermutation([1,3,2]))
+print(nextPermutation([1,3,1]))
