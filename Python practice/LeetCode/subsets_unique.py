@@ -10,6 +10,23 @@ def subsetsUnique(nums):
             ans.append(ans[j] + [nums[i]])
     return ans
 
+def subsetsUnique(nums):
+    ans = []
+    nums.sort()
+    prefix = []
+    index = 0
+    dfs(nums, index, prefix, ans)
+    return ans
+
+def dfs(nums, index, prefix, ans):
+    ans.append(prefix)
+    if index >= len(nums):
+        return
+    for i in range(index, len(nums)):
+        if i > index and nums[i] == nums[i-1]:
+            continue
+        dfs(nums, i + 1, prefix + [nums[i]], ans)
+        
 print(subsetsUnique(    [1,2,2] ))
 print(subsetsUnique(    [1,2,3]))
 print(subsetsUnique(    [1]))
