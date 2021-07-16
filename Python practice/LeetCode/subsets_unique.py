@@ -23,6 +23,8 @@ def dfs(nums, index, prefix, ans):
     if index >= len(nums):
         return
     for i in range(index, len(nums)):
+        if i > 0 and i <= index:
+            print(i ,  index)
         if i > index and nums[i] == nums[i-1]:
             continue
         dfs(nums, i + 1, prefix + [nums[i]], ans)
