@@ -13,6 +13,7 @@ def dfs(arr, start, visited, target):
     visited[start] = True
     return dfs(arr, start - arr[start], visited, target) \
         or dfs(arr, start + arr[start], visited, target)
+        
 print(canReach(   arr = [4,2,3,0,3,1,2], start = 5  ))
 print(canReach(   arr = [4,2,3,0,3,1,2], start = 0   ))
 print(canReach(  arr = [3,0,2,1,2], start = 2   ))
