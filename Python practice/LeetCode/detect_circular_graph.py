@@ -29,6 +29,7 @@ class Graph():
                     return True
             elif recursive[neighbor]:
                     return True
+        recursive[vertex] = False
         return False
     
 g = Graph(4)
