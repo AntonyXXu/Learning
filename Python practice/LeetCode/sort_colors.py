@@ -16,8 +16,21 @@ def sortColors(nums):
         nums[i] = curr
         d[curr] -= 1
 
-    
-
+def sortColors(nums):
+    p1 = 0
+    p2 = 0
+    p3 = len(nums) - 1
+    while p2 <= p3:
+        if nums[p2] == 0:
+            nums[p1], nums[p2] = nums[p2], nums[p1]
+            p1 += 1
+            p2 += 1
+        elif nums[p2] == 1:
+            p2 += 1
+        else:
+            nums[p2], nums[p3] = nums[p3], nums[p2]
+            p3 -= 1
+    print(nums)
 
 print(sortColors( [2,0,2,1,1,0]))
 print(sortColors( [2,0,1]))
