@@ -1,5 +1,5 @@
 # Question1:
-# Input is a list of values, check you can create sets of full houses (3x 1, 2x 2) using ALL numbers
+# Input is a list of values, check you can create sets of full houses (3x 1, 2x 1) using ALL numbers
 
 #Question2:
 # Input is a list of values, check if you can create sets of straights of 5
@@ -88,3 +88,46 @@ print(straight([1,1,2,2,3,3,4,4,5,5]))
 print(straight([3,3,2,2,1,4,5,4,1,5]))
 print(straight([1,2,3,4,5,2,3,4,4,5]))
 
+
+# So basically for the full house one, you have to go through, and if any of the counts are odd numbers, 
+# you have to assume there's 1 triple and you take out 3 (keep track of how many triples there are)
+# afteerwards each number bucket will be even number
+# so now if you multiply the number of triples you had in the first step by 2 (you get how many pairs you'd need to complete the triples)
+# and SUBTRRACT that number from from the total of the remaining you calculated
+# you'd get a result that is a multiple of 10
+# basically divide that by 5, and you'd get how many remaining triples you need to make, so just go through and make sure you have enough buckets > 2 to do this
+
+def FullHouse(nums):
+	if not nums or len(nums) % 5 != 0:
+		return False
+
+	d = collections.defaultdict(int)
+	for num in nums:
+		d[num] += 1
+
+	triples = 0
+	for k, v in d.items():
+		if v % 2 == 1:
+			if v == 1:
+				return False
+			else:
+				d[k] = v - 3
+				triples += 1
+
+	total_count = 0
+	for v in d.values():
+		total_count += v
+
+	remaining_count = total_count - triples * 2
+	triples_still_needed = remaining_count / 5
+
+	for k, v in d.items():
+		while v >= 6:
+			if triples_still_needed == 0:
+				return True
+			v -= 6
+			triples_still_needed -= 2
+
+	if triples_still_needed != 0:
+		return False
+	return True
