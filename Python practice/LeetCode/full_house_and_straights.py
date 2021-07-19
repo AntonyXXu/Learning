@@ -36,30 +36,30 @@ def fullHouse(nums):
             sixes += count // 6
         else:
             return False
+    # Minimize twos and threes
     if twos == threes:
         return sixes % 2 == 0
-    elif twos > threes:
-        twos = twos - threes
-        threes = 0
-    else:
-        threes = threes - twos
-        twos = 0
-    if not sixes:
-        return False
-    while twos > 0:
-        sixes -= 1
-        twos -= 3
-    while threes> 0:
-        sixes -= 1
-        threes -= 2
-    if sixes % 2 == 0:
-        return True
-    
-
-    if twos or sixes or threes:
+    while sixes > 0:
+        if twos > threes:
+            twos = twos - threes
+            threes = 0
+        else:
+            threes = threes - twos
+            twos = 0
+        if twos:
+            required = twos // 3 - 1
+            sixes -= required
+            threes = required * 2 - twos
+        elif threes:
+            required = threes // 2 - 1
+            sixes = required
+            twos = required * 3 - threes
+    if sixes < 0 or twos or threes:
         return False
     return True
 
+
+#Q2
 def straight(nums):
     if not nums or len(nums) % 5 != 0:
         return False
