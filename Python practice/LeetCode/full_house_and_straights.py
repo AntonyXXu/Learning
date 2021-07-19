@@ -33,12 +33,11 @@ def fullHouse(nums):
         elif count % 2 == 0 and count % 3 != 0:
             twos += count // 2
         elif count % 6:
-            sixes += count % 6
+            sixes += count // 6
         else:
             return False
     if twos == threes:
         return sixes % 2 == 0
-
     elif twos > threes:
         twos = twos - threes
         threes = 0
@@ -47,11 +46,15 @@ def fullHouse(nums):
         twos = 0
     if not sixes:
         return False
-    
-    
-    while twos >= 0:
+    while twos > 0:
+        sixes -= 1
         twos -= 3
-
+    while threes> 0:
+        sixes -= 1
+        threes -= 2
+    if sixes % 2 == 0:
+        return True
+    
 
     if twos or sixes or threes:
         return False
@@ -64,11 +67,12 @@ def straight(nums):
     for num in nums:
         d[num] += 1
     for key in sorted(d.keys()):
-        while d[key]:
+        if d[key]:
+            num = d[key]
             for i in range(key, key + 5):
-                if not d[i]:
+                if d[i] < num:
                     return False
-                d[i] -= 1
+                d[i] -= num
     return True
 
 print(straight([1,2,3,4,5,2,3,4,5,6]))
