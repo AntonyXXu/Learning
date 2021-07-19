@@ -25,6 +25,7 @@ def fullHouse(nums):
     threes = 0
     twos = 0
     sixes = 0
+    print(d.values())
     for count in d.values():
         if count % 5 == 0:
             continue
@@ -32,13 +33,15 @@ def fullHouse(nums):
             threes += count // 3
         elif count % 2 == 0 and count % 3 != 0:
             twos += count // 2
-        elif count % 6:
+        elif count % 6 == 0:
             sixes += count // 6
         else:
             return False
     # Minimize twos and threes
     if twos == threes:
         return sixes % 2 == 0
+    
+    print(twos, threes, sixes)
     while sixes > 0:
         if twos > threes:
             twos = twos - threes
@@ -47,16 +50,20 @@ def fullHouse(nums):
             threes = threes - twos
             twos = 0
         if twos:
-            required = twos // 3 - 1
+            required = twos // 3 + twos % 3 != 0
             sixes -= required
             threes = required * 2 - twos
+            twos -= required * 2
         elif threes:
-            required = threes // 2 - 1
-            sixes = required
+            required = threes // 2 + threes % 2 != 0
+            sixes -= required
             twos = required * 3 - threes
+            threes -= required * 3
     if sixes < 0 or twos or threes:
         return False
     return True
+print('full house')
+print(fullHouse(  [1,1,1,1,2,2,4,4,4,4,4,4,5,5,5]      ))
 
 
 #Q2
@@ -74,6 +81,7 @@ def straight(nums):
                     return False
                 d[i] -= num
     return True
+print('straight')
 
 print(straight([1,2,3,4,5,2,3,4,5,6]))
 print(straight([1,1,2,2,3,3,4,4,5,5]))
