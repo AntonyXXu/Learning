@@ -32,8 +32,3 @@ print(stackable([(5, 5), (1, 6)]))
 print(stackable([(5, 5), (5, 5)]))
 print(stackable([(4, 5), (4, 3), (3, 2)]))
 print(stackable(    [(3,7),(5,10),(6,2)]    ))
-x = (1, 0)
-x = (0, 1)
-temp = x[0]
-x[0] = x[1]
-x[1] = temp
