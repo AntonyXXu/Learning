@@ -29,3 +29,12 @@ def buildTree(preorder, inorder):
                 parent.right = currNode
             stk.append(currNode)
     return head
+
+def buildTree(preorder, inorder):
+    if inorder:
+        val = preorder.pop(0)
+        index = inorder.index(val)
+        root = TreeNode(val)
+        root.left = buildTree(preorder, inorder[:index])
+        root.right = buildTree(preorder, inorder[index+1:])
+        return root
