@@ -28,6 +28,7 @@ def search(nums, target):
 
     return -1
 
+
 def findPivot(nums):
     if len(nums) == 1:
         return 0
@@ -45,11 +46,12 @@ def findPivot(nums):
             r = m - 1
     return 0
 
-print(findPivot(nums = [4,5,6,7,0,1,2]))
-print(findPivot(nums = [4,5,6,7,0,1,2]))
-print(findPivot(nums = [1]))
-print(findPivot(nums = [1,2,3,4]))
 
-print(search( [4,5,6,7,0,1,2], 0))
-print(search( [4,5,6,7,0,1,2], 3))
-print(search( [1], 0))
+print(findPivot(nums=[4, 5, 6, 7, 0, 1, 2]))
+print(findPivot(nums=[4, 5, 6, 7, 0, 1, 2]))
+print(findPivot(nums=[1]))
+print(findPivot(nums=[1, 2, 3, 4]))
+
+print(search([4, 5, 6, 7, 0, 1, 2], 0))
+print(search([4, 5, 6, 7, 0, 1, 2], 3))
+print(search([1], 0))
