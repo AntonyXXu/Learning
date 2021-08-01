@@ -20,13 +20,14 @@ def reverseKGroup(head, k):
             prev = right
             curr = left
             for _ in range(k):
-                temp = curr
+                temp = curr.next
                 curr.next = prev
-                curr = curr.next
-                prev = temp
-            pre.next = right
+                prev = curr
+                curr = temp
+
+            pre.next = prev
             pre = left
             left = right
-        if not right:
+        else:
             return dummy.next
     return dummy.next
