@@ -1,5 +1,8 @@
 # https://leetcode.com/problems/binary-tree-right-side-view/
 # Definition for a binary tree node.
+import collections
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -25,3 +28,21 @@ def preorder(root, ans, h, height):
         ans.append(root.val)
     preorder(root.right, ans, h, height + 1)
     preorder(root.left, ans, h, height + 1)
+
+
+def level(root):
+    if not root:
+        return []
+    ans = []
+    dq = collections.deque()
+    dq.append(root)
+    while dq:
+        curr = None
+        for _ in range(len(dq)):
+            curr = dq.popleft()
+            if curr.left:
+                dq.append(curr.left)
+            if curr.right:
+                dq.append(curr.right)
+        ans.append(curr.val)
+    return ans
