@@ -26,7 +26,36 @@ class Encrypt:
         return ''.join(res)
 
 
-e = Encrypt(
-    'The quick onyx goblin, Grabbing his sword jump over the 1st lazy dwarf')
+def decrypt(d: str, c: str):
+    if not c or c == '0' or not d:
+        return []
+    # find all uniques of c
+    cipher = set()
+    if len(c) == 1:
+        cipher.add(1)
+    else:
+        prev1 = [c[0]]
+        prev2 = [c[0]]
+        for i in range(1, len(c)):
+            curr = int(c[i-1:i+1])
+            currentPermutes = []
+            if curr % 10 == 0 and curr > 30:
+                return []
+            elif curr % 10 == 0:
+                currentPermutes.append()
+            elif curr > 10:
+                set.add(curr//10)
+            i += 1
+    # map all unique letters in d
+    di = {}
+    for word in d:
+        uniques = len(set(word))
+        if uniques not in d:
+            d[uniques] = []
+        d[uniques].append(word)
 
-print(e.encrypt('It was all a dream.'))
+    res = []
+    for num in cipher:
+        if num in di:
+            res.extend(di[num])
+    return res
