@@ -1,10 +1,11 @@
 # https://leetcode.com/problems/course-schedule/
 import collections
 
+
 def canFinish(numCourses, preReq):
     if not preReq:
         return True
-        
+
     d = collections.defaultdict(list)
     # build the graph
     for edge in preReq:
@@ -12,12 +13,13 @@ def canFinish(numCourses, preReq):
 
     visited = [False] * numCourses
     recursiveStack = [False] * numCourses
-    
+
     for vertex in range(numCourses):
         if not visited[vertex]:
             if dfsCycle(visited, recursiveStack, vertex, d):
                 return False
     return True
+
 
 def dfsCycle(visited, recursiveStack, vertex, d):
     visited[vertex] = True
@@ -32,5 +34,6 @@ def dfsCycle(visited, recursiveStack, vertex, d):
     recursiveStack[vertex] = False
     return False
 
-print(canFinish( 2,  [[1,0]]))
-print(canFinish(    2, [[1,0],[0,1]]))
+
+print(canFinish(2,  [[1, 0]]))
+print(canFinish(2, [[1, 0], [0, 1]]))
