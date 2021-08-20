@@ -19,3 +19,4 @@ stringVar.strip()
 puts stringVar.include? "t"
 puts stringVar[0, 2]
 puts stringVar.index('s')
+stringVar.index('s   ')
