@@ -20,3 +20,11 @@ puts stringVar.include? "t"
 puts stringVar[0, 2]
 puts stringVar.index('s')
 stringVar.index('s   ')
+
+# data structures
+arr = Array.new
+arr2 = Array["test"]
+arr.reverse()
+arr.include? "test"
+puts arr
+puts arr2
