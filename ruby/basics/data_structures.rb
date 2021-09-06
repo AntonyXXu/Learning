@@ -16,5 +16,6 @@ puts hash["key"]
 # functions
 def sayhi
     puts 'hello'
+    return 'test'
 end
-sayhi()
+puts sayhi
