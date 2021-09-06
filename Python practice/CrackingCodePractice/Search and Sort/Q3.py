@@ -1,6 +1,7 @@
-#Search in rotated sorted array
-x = [5,6,7,9,-4,3,4]
-x = [2,2,2,3,4,2]
+# Search in rotated sorted array
+x = [5, 6, 7, 9, -4, 3, 4]
+x = [2, 2, 2, 3, 4, 2]
+
 
 def findPivot(arr, low, high):
     if low >= high:
@@ -16,6 +17,7 @@ def findPivot(arr, low, high):
         return findPivot(arr, index+1, high)
     else:
         return findPivot(arr, low, index-1)
+
 
 def findVal(arr, val):
     if len(arr) < 1:
@@ -35,9 +37,10 @@ def findVal(arr, val):
             return mid
         if val < arr[mid]:
             j = mid - 1
-        else: 
-            i = mid + 1       
+        else:
+            i = mid + 1
     return -1
 
+
 print(findVal(x, 3))
-print(findVal([1],1))
+print(findVal([1], 1))
