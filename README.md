@@ -1,5 +1,5 @@
 # Learning
-I've put all my my personal learning materials within this repository. It includes various learning for JavaScript asynchronous programming, React.js, DSA and OOP in C++, DSA/leetcode problems in Python, SQL practice, and C# forms and webpages
+I've put all my my personal learning materials within this repository. It includes various learning for JavaScript asynchronous programming, React.js, DSA and OOP in C++, DSA/leetcode problems in Python, SQL practice, and C# forms and webpages 
 
 ## JavaScript
 - Practice React.JS to create a ToDo List using both component classes and hooks
