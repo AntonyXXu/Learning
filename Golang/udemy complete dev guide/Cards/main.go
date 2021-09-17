@@ -7,7 +7,7 @@ func main() {
 	cards := []string{"test", newCard()}
 	cards = append(cards, "six")
 	for i, card := range cards {
-		fmt.Println(i, card)
+		fmt.Println(card)
 	}
 	fmt.Println(cards)
 
