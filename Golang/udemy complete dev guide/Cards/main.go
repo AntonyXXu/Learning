@@ -2,11 +2,6 @@ package main
 
 func main() {
 	// := only for new vars
-	cards := deck{"test", newCard()}
-	cards = append(cards, "six")
+	cards := newDeck()
 	cards.print()
-}
-
-func newCard() string {
-	return "Five of Diamonds"
 }
