@@ -22,7 +22,7 @@ type personV2 struct {
 }
 
 func (p person) print() {
-	fmt.Printf("%+v", p)
+	fmt.Printf("%+v\n", p)
 }
 
 func (p* person) updateName(newName string) {
@@ -51,6 +51,7 @@ func main() {
 	ptr.updateName(("jim"))
 	ptr.print()
 
-	
-
+	// shortcut ptrs
+	p2.updateName("B")
+	p2.print()
 }
