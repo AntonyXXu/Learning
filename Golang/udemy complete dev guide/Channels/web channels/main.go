@@ -21,8 +21,8 @@ func main() {
 		// only put go in front of function calls
 		go checkLink(site, c)
 	}
-	for {
-		go checkLink(<-c, c)
+	for s := range c {
+		go checkLink(s, c)
 	}
 }
 
