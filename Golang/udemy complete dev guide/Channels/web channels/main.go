@@ -21,20 +21,21 @@ func main() {
 		// only put go in front of function calls
 		go checkLink(site, c)
 	}
-	for {
-		go checkLink(<-c)
+	for i:=0; i < len(sites); i++ {
+		fmt.Println(<-c)
 	}
+	fmt.Println(<-c)
 }
 
 func checkLink(site string, c chan string) bool {
 	_, err := http.Get(site)
 	if err != nil {
 		fmt.Println(site, " offline")
-		c <- site
+		c <- site + " offline"
 		return false
 	}
 
 	fmt.Println(site, " online")
-	c <- site
+	c <- site + " online"
 	return true
 } 
