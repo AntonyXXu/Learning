@@ -15,3 +15,6 @@ puts a.sub('name', "lalala")
 
 first_name = gets.chomp
 puts first_name
+
+num = gets.chomp
+puts num.to_i * 10
