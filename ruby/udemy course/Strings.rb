@@ -10,3 +10,8 @@ puts 20.0.class
 puts 10.class
 
 puts a.sub('name', "lalala")
+
+# inputs
+
+first_name = gets.chomp
+puts first_name
