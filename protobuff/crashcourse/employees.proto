@@ -1,0 +1,15 @@
+syntax = "proto3";
+// protobuff requires schema
+// must declare the struct / message properties
+
+// single employee object
+message Employee {
+    int32 id = 1;
+    string name = 2;
+    float salary = 3;
+};
+
+message Employees {
+    // repeated is array, followed by type, and the var name
+    repeated Employee employees = 1;
+};
