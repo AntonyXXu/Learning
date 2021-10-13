@@ -1,22 +1,35 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net"
+	"net/http"
+	"net/rpc"
+)
 
 type Item struct {
-	title string
-	body  string
+	Title string
+	Body  string
 }
+
+type API int
 
 var database []Item
 
-func GetByName(title string) Item {
+func (a *API) GetDatabase(title string, reply *[]Item) error {
+	*reply = database
+	return nil
+}
+
+func (a *API) GetByName(title string, reply *Item) error {
 	var getItem Item
 	for _, val := range database {
-		if val.title == title {
+		if val.Title == title {
 			getItem = val
 		}
 	}
-	return getItem
+	*reply = getItem
+	return nil
 }
 
 func CreateItem(item Item) Item {
@@ -24,54 +37,80 @@ func CreateItem(item Item) Item {
 	return item
 }
 
-func AddItem(item Item) Item {
+func (a *API) AddItem(item Item, reply *Item) error {
 	database = append(database, item)
-	return item
+	*reply = item
+	return nil
 }
 
-func editItem(title string, edit Item) Item {
+func (a *API) EditItem(edit Item, reply *Item) error {
 	var changedItem Item
 
 	for index, val := range database {
-		if val.title == edit.title {
-			database[index] = edit
-			changedItem = edit
+		if val.Title == edit.Title {
+			database[index] = Item{edit.Title, edit.Body}
+			changedItem = database[index]
 		}
 	}
+	*reply = changedItem
 
-	return changedItem
+	return nil
 }
 
-func deleteItem(item Item) Item {
+func (a *API) DeleteItem(item Item, reply *Item) error {
 	var delItem Item
 	for index, val := range database {
-		if val.title == item.title && val.body == item.body {
+		if val.Title == item.Title && val.Body == item.Body {
 			database = append(database[:index], database[index+1:]...)
 			delItem = item
 			break
 		}
 	}
-	return delItem
+	*reply = delItem
+	return nil
 }
 
 func main() {
-	fmt.Println("initial database: ", database)
-	a := Item{"first", "a test item"}
-	b := Item{"second", "a second item"}
-	c := Item{"third", "a third item"}
+	api := new(API)
+	err := rpc.Register(api)
 
-	AddItem(a)
-	AddItem(b)
-	AddItem(c)
-	fmt.Println("second database: ", database)
+	if err != nil {
+		log.Fatal("error registering API")
+	}
 
-	deleteItem(b)
-	fmt.Println("third database: ", database)
+	rpc.HandleHTTP()
+	
+	listener, err := net.Listen("tcp", ":4040")
 
-	editItem("third", Item{"fourth", "a new item"})
-	fmt.Println("fourth database: ", database)
+	if err != nil {
+		log.Fatal("listener error")
+	}
 
-	x := GetByName("fourth")
-	y := GetByName("first")
-	fmt.Println(x, y)
+	log.Printf("Serving rpc on port %d", 4040)
+
+	err = http.Serve(listener, nil)
+	if err != nil {
+		log.Fatal("error serving: ", err)
+	}
+
+
+	// fmt.Println("initial database: ", database)
+	// a := Item{"first", "a test item"}
+	// b := Item{"second", "a second item"}
+	// c := Item{"third", "a third item"}
+
+	// AddItem(a)
+	// AddItem(b)
+	// AddItem(c)
+	// fmt.Println("second database: ", database)
+
+	// DeleteItem(b)
+	// fmt.Println("third database: ", database)
+
+	// EditItem("third", Item{"fourth", "a new item"})
+	// fmt.Println("fourth database: ", database)
+
+	// x := GetByName("fourth")
+	// y := GetByName("first")
+	// fmt.Println(x, y)
 }
